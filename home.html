@@ -17,8 +17,8 @@
       <nav class="nav-menu">
         <ul>
           <li><a href="home.html">Home</a></li>
-          <li><a href="home.html">About Us</a></li>
-          <li><a href="home.html">Contact Us</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
 
@@ -42,8 +42,22 @@
     <li><a href="#articles"><img src="Images/Article.svg" alt="Articles Icon">Articles</a></li>
   </ul>
 </aside>
-<div class="bottom-bar"></div>
+<div class="bottom-bar">
 
+  
+</div>
+
+
+
+
+<script>
+  const currentUrl = window.location.href;
+  document.querySelectorAll('.nav-menu a, .sidebar a').forEach(link => {
+      if (link.href === currentUrl) {
+          link.classList.add("active");
+      }
+  });
+</script>
 </body>
 </html>
 
