@@ -1,0 +1,246 @@
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+
+}
+
+header {
+    background-color: #f3f3f3;
+    color: #000000;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 100%;
+    position: relative;
+    height: 86px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+
+.logo {
+    display: flex;
+    align-items: center; 
+    gap: 10px;  
+}
+
+.logo-1 img {
+    width: 100px;
+    object-fit: contain;
+    max-height: 83px;
+
+}
+
+.logo-2 img {
+    width: 100px;
+    object-fit: contain;
+    max-height: 83px;
+
+}
+
+.right-side{ 
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.nav-menu {
+    display: flex;
+    gap: 15px;
+
+}
+
+.nav-menu ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+
+}
+
+.nav-menu li {
+    margin: 0 15px;
+
+}
+
+.nav-menu a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #f3f3f3;
+    padding: 25px 5px;
+    border: none;
+    border-radius: 50px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #ff6358;
+
+}
+.donate-button {
+    margin-left: 20px;
+}
+.donate-button button {
+    background-color: #e04819;
+    border: none;
+    padding: 13px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.donate-button button a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+
+}
+
+.donate-button button:hover {
+    background-color: #ff4500;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0, 0.2);
+}
+
+.sidebar {
+    width: 275px;
+    background-color: white;
+    padding-top: 10px;
+    position: fixed;
+    top: 86px;
+    left: 0;
+    height: calc(100% - 80px);
+    border-right: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+    padding-right: 20px;
+
+}
+
+.sidebar-label {
+    font-size: 15px;
+    color: #8f8fa7;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sidebar-label:hover {
+    color: #ff6348;
+}
+
+.sidebar ul { 
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.sidebar ul li {
+    padding-bottom: 10px;
+    text-align: left;
+    margin: 0;
+
+}
+
+.sidebar ul li a {
+    position: relative;
+    text-decoration: none;
+    color: #8f8fa7;
+    font-size: 18px;
+    display: block;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+    width: calc(100% + 20px);
+    transition: background-color 0.3s ease;
+    margin: 0;
+
+}
+
+.sidebar ul li a img{
+    width: 20px;
+    height: 20px;
+    margin-right: 30px;
+    vertical-align: middle;
+
+}
+
+.sidebar ul li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px; /* Thickness of the bar */
+    height: 100%;
+    background-color: #ff6348; /* Bar color */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.sidebar ul li a:hover::before {
+    opacity: 1;
+}
+
+.sidebar ul li a.active {
+    background-color: #ff6348;
+    color: white;
+
+}
+
+.sidebar ul li a:hover {
+    background-color: rgba(250, 191, 180, 0.3);
+    color: #ff6348;
+
+}
+
+.sidebar img {
+    fill: red;
+    width: 24px;
+    height: 24px;
+    transition: fill 0.3s ease;
+}
+
+.sidebar a:hover img {
+    fill: #ff6348;
+}
+
+main {
+    margin-left: 270px;
+    padding: 20px;
+}
+
+.bottom-bar {
+    position: fixed;
+    background-color: #ff7e4f;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 1000;
+}
