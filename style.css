@@ -204,10 +204,11 @@ header {
     padding-right: 20px;
     width: calc(100% + 20px);
     transition: background-color 0.3s ease;
-    margin: 0;
+    margin: 1;
 
 }
 
+/* this is a test */
 .sidebar ul li a img{
     width: 20px;
     height: 20px;
