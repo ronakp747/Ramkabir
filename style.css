@@ -6,10 +6,20 @@
 
 }
 
+main {
+    margin-left: 270px;
+    padding: 20px;
+    margin-top: 86px;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
 
+}
+
+hr { 
+    margin-bottom: 10px;
 }
 
 header {
@@ -23,6 +33,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
 }
 
 .header-container {
@@ -208,7 +223,7 @@ header {
 
 }
 
-/* this is a test */
+
 .sidebar ul li a img{
     width: 20px;
     height: 20px;
@@ -235,11 +250,10 @@ header {
     opacity: 1;
 }
 
-.sidebar ul li a.active {
-    background-color: #ff6348;
-    color: white;
+.sidebar ul li a.active::before {
+    opacity: 1;
+    background-color: #ff6348; /* Optional: change color if needed */
     
-
 }
 
 .sidebar ul li a:hover {
@@ -249,7 +263,6 @@ header {
 }
 
 .sidebar img {
-    fill: red;
     width: 24px;
     height: 24px;
     transition: fill 0.3s ease;
@@ -259,10 +272,29 @@ header {
     fill: #ff6348;
 }
 
-main {
+.main-content {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 20px;
     margin-left: 270px;
-    padding: 20px;
+    margin-top: 86px;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    border: none;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 .bottom-bar {
     position: fixed;
@@ -273,3 +305,87 @@ main {
     height: 100px;
     z-index: 1000;
 }
+
+.bottom-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 20px;
+    margin-left: 270px;
+    margin-bottom: 120px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+
+}
+
+.content-box {
+    flex: 1 1 200px;
+    margin: 10px;
+    margin-bottom: 10px;
+
+}
+
+.content-row {
+    display: flex;
+    gap:10px;
+    margin-bottom: 40px;
+}
+
+.content-box h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+
+}
+
+.content-box ul {
+    list-style: none;
+    padding: 0;
+
+}
+
+.content-box ul li {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 6px;
+
+}
+
+
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 15px;
+}
+
+.social-icnons a {
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+    transition: transform 0.2s ease;
+    text-decoration: none;
+    color: black;
+    
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    transition: transform 0.2s ease;
+    display: inline-block;
+    vertical-align: middle;
+    
+}
+
+.social-icons a:link, .social-icons a:visited {
+    color: black; /* Ensure links are black even when visited */
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+
+}
+
