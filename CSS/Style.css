@@ -279,7 +279,7 @@ header {
     justify-content: space-between;
     padding: 40px 20px;
     margin-left: 270px;
-    margin-top: 86px;
+    margin-top: 50px;
     background-color: white;
     border-top: 1px solid #ddd;
     border: none;
@@ -389,3 +389,23 @@ header {
 
 }
 
+
+h3 {
+    text-align: left;
+    margin-bottom: 10px;
+    color: #ff6348;
+    font-size: 25px;
+}
+h4 {
+    text-align: left;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 12px;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 40px;
+    background-color: transparent;
+}

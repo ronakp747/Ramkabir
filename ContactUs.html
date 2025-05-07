@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>ContactUs</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/ContactUs.css">
+    <link rel="stylesheet" href="CSS/Style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -45,7 +46,43 @@
 
 
 <section class="main-content">
-  <h2>Contact Us Content Area</h2>
+  <div class="contactUs-container">
+    <h3>Contact Us</h3>
+    <h4>Home >> Contact Us</h4>
+    <hr>
+    <form action="https://formspree.io/f/xqaqbqzz" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first_name" placeholder="Required" required>
+      </div>
+        <div class="form-group">
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last_name" placeholder="Required" required>
+      </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group">
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" placeholder="Required" required>
+      </div>
+        <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Required" required>
+      </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group">
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Required" required></textarea>
+      </div>
+      </div>
+  
+      <button type="submit">Send</button>
+    </form>
+</div>
 </section>
 
 
@@ -134,6 +171,40 @@
 </script>
 </body>
 </html>
+
+
+<script>
+  const currentUrl1 = window.location.href;
+  document.querySelectorAll('.nav-menu a, .sidebar a').forEach(link => {
+      if (link.href === currentUrl1) {
+          link.classList.add("active");
+      }
+  });
+
+  // Reset form after successful Formspree submission
+  const form = document.querySelector('form');
+  form.addEventListener('submit', async function(e) {
+      e.preventDefault(); // prevent default form submission
+      const formData = new FormData(form);
+
+      // Send the form data using Fetch
+      const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+              'Accept': 'application/json'
+          }
+      });
+
+      if (response.ok) {
+          alert('Thank you for your message!');
+          form.reset(); // this clears all input fields
+      } else {
+          alert('Oops! Something went wrong.');
+      }
+  });
+</script>
+
 
 
 
