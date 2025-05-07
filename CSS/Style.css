@@ -10,6 +10,7 @@ main {
     margin-left: 270px;
     padding: 20px;
     margin-top: 86px;
+
 }
 
 body {
@@ -20,8 +21,11 @@ body {
 
 hr { 
     margin-bottom: 10px;
+
 }
 
+
+/*  Header */
 header {
     background-color: #f3f3f3;
     color: #000000;
@@ -51,10 +55,13 @@ header {
 }
 
 
+
+/*  Logo in top left corner formatting  */
 .logo {
     display: flex;
     align-items: center; 
     gap: 10px;  
+
 }
 
 .logo-1 img {
@@ -71,14 +78,21 @@ header {
 
 }
 
+
+
+
+
+/* Navigation menu at top of the screen   */
+.nav-menu {
+    display: flex;
+    gap: 0px;
+
+}
+
 .right-side{ 
     display: flex;
     gap: 15px;
     align-items: center;
-}
-.nav-menu {
-    display: flex;
-    gap: 0px;
 
 }
 
@@ -107,6 +121,7 @@ header {
     justify-content: center;
     transition: background-color 0.3s;
     position: relative;
+
 }
 
 .nav-menu a:hover {
@@ -123,6 +138,7 @@ header {
     height: 5px;
     background-color: #ff6348;
     opacity: 1;
+
 }
 
 
@@ -135,11 +151,15 @@ header {
     height: 5px;
     background-color: #ff6348;
     opacity: 1;
+
 }
 
+/*  Donate button in top right corner  */
 .donate-button {
     margin-left: 20px;
+
 }
+
 .donate-button button {
     background-color: #e04819;
     border: none;
@@ -148,6 +168,7 @@ header {
     cursor: pointer;
     border-radius: 50px;
     transition: all 0.3s ease;
+
 }
 
 .donate-button button a {
@@ -161,8 +182,10 @@ header {
     background-color: #ff4500;
     transform: translateY(-5px);
     box-shadow: 0 4px 10px rgba(0,0,0, 0.2);
+
 }
 
+/*  Sidebar Navigation for all the buttons  */
 .sidebar {
     width: 275px;
     background-color: white;
@@ -187,10 +210,12 @@ header {
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
+
 }
 
 .sidebar-label:hover {
     color: #ff6348;
+
 }
 
 .sidebar ul { 
@@ -244,10 +269,12 @@ header {
     transition: opacity 0.3s ease;
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
+
 }
 
 .sidebar ul li a:hover::before  {
     opacity: 1;
+
 }
 
 .sidebar ul li a.active::before {
@@ -266,12 +293,16 @@ header {
     width: 24px;
     height: 24px;
     transition: fill 0.3s ease;
+
 }
 
 .sidebar a:hover img {
     fill: #ff6348;
+
 }
 
+
+/*  Main content section to allow everything to fit in the specific box  */
 .main-content {
 
     display: flex;
@@ -283,19 +314,10 @@ header {
     background-color: white;
     border-top: 1px solid #ddd;
     border: none;
+
 }
 
-
-
-
-
-
-
-
-
-
-
-
+/*  Orange bar at bottom of screen  */
 .bottom-bar {
     position: fixed;
     background-color: #ff7e4f;
@@ -304,8 +326,10 @@ header {
     width: 100%;
     height: 100px;
     z-index: 1000;
+
 }
 
+/* lower content section where credits are for each page   */
 .bottom-content {
     display: flex;
     flex-wrap: wrap;
@@ -352,12 +376,13 @@ header {
 }
 
 
-
+/*  Social Icons on the left side navigation  */
 .social-icons {
     display: flex;
     flex-direction: column;
     gap: 10px;
     font-size: 15px;
+
 }
 
 .social-icnons a {
@@ -381,7 +406,8 @@ header {
 }
 
 .social-icons a:link, .social-icons a:visited {
-    color: black; /* Ensure links are black even when visited */
+    color: black; 
+
 }
 
 .social-icons a:hover img {
@@ -390,22 +416,29 @@ header {
 }
 
 
-h3 {
-    text-align: left;
-    margin-bottom: 10px;
-    color: #ff6348;
-    font-size: 25px;
-}
-h4 {
-    text-align: left;
-    margin-bottom: 10px;
-    color: #333;
-    font-size: 12px;
-}
-
+/* headers for each page  including the navigation path label */
 .main-container {
     width: 90%;
     max-width: 1200px;
     padding: 40px;
     background-color: transparent;
+
 }
+
+h3 {
+    text-align: left;
+    margin-bottom: 10px;
+    color: #ff6348;
+    font-size: 25px;
+
+}
+
+h4 {
+    text-align: left;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 12px;
+
+}
+
+

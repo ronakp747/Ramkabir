@@ -1,11 +1,5 @@
 
-.timeline-container {
-    width: 90%;
-    max-width: 1200px;
-    padding: 40px;
-    background-color: transparent;
-}
-
+/* formats the timeline  */
 .timeline {
     position: relative;
     padding: 20px 0;
@@ -21,6 +15,7 @@
     transform: translateX(-50%);
 }
 
+/* formats events for the timeline  */
 .timeline-event {
     display: flex;
     justify-content: space-between;
@@ -40,6 +35,8 @@
     transform: translateX(-50%);
 }
 
+
+/* puts dates on the left side  */
 .timeline-left {
     width: 25%;
     font-size: 10px;
@@ -48,6 +45,7 @@
     
 }
 
+/* puts description on right side */
 .timeline-right {
     width: 70%;
     text-align: left;
