@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Home</title>
     <link rel="stylesheet" href="CSS/Home.css">
     <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="stylesheet" href="CSS/DailyThoughts.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -49,6 +51,13 @@
   <div class="main-container">
     <h3>Home</h3>
     <hr>
+  </div>
+  <div class="daily-thought-box">
+    <img src="Images/DailyThoughts.png" alt="Daily Thought Background" class="thought-image">
+    <div class="daily-thought-text-overlay">
+      <p class="thought-text" id="quote"></p>
+      <p class="thought-author" id="author"></p>
+    </div>
   </div>
 </section>
 
@@ -135,7 +144,9 @@
           link.classList.add("active");
       }
   });
+  
 </script>
+<script src="dailyThought.js"></script>
 </body>
 </html>
 
