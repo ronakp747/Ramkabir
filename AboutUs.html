@@ -8,43 +8,42 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<header>
+  <header>
     <div class="header-container">
-      <div class="logo">
-        <img src="https://ramkabir.org/img/logo-icon.jpg" class="logo-1">
-        <img src="https://ramkabir.org/img/logo.png" class="logo-2">
-      </div>
+    <div class="logo">
+    <img src="https://ramkabir.org/img/logo-icon.jpg" class="logo-1">
+    <img src="https://ramkabir.org/img/logo.png" class="logo-2">
+  </div>
 
-      <div class ="right-side">
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="AboutUs.html">About Us</a></li>
-          <li><a href="ContactUs.html">Contact Us</a></li>
-        </ul>
-      </nav>
+<div class ="right-side">
+<nav class="nav-menu">
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="AboutUs.html">About Us</a></li>
+    <li><a href="ContactUs.html">Contact Us</a></li>
+  </ul>
+</nav>
 
-      <div class="donate-button">
-        <button><a href="#donate">Donate Now</a></button>
-      </div>
-    </div>
-    </div>
+<div class="donate-button">
+  <button><a href="#donate">Donate Now</a></button>
+</div>
+</div>
+</div>
 </header>
 
 <aside class="sidebar">
-  <div class="sidebar-label">Library</div>
-  <ul>
-    <li><a href="DailyThoughts.html"><img src="Images/thought.svg" alt="Daily Thoughts Icon">Daily Thoughts</a></li>
-    <li><a href="Events.html"><img src="Images/calendar.svg" alt="Events Icon">Events</a></li>
-    <li><a href="Books.html"><img src="Images/book.svg" alt="Books Icon">Books</a></li>
-    <li><a href="Songs.html"><img src="Images/song.svg" alt="Songs Icon">Songs</a></li>
-    <li><a href="MusicAlbums.html"><img src="Images/music_album.svg" alt="Music Albums Icon">Music Albums</a></li>
-    <li><a href="Podcasts.html"><img src="Images/podcast.svg" alt="Podcasts Icon">Podcasts</a></li>
-    <li><a href="Podcast Albums.html"><img src="Images/podcast_album.svg" alt="Podcasts Album Icon">Podcast Albums</a></li>
-    <li><a href="Articles.html"><img src="Images/article.svg" alt="Articles Icon">Articles</a></li>
+<div class="sidebar-label">Library</div>
+<ul>
+<li><a href="DailyThoughts.html"><img src="Images/thought.svg" alt="Daily Thoughts Icon">Daily Thoughts</a></li>
+<li><a href="Events.html"><img src="Images/calendar.svg" alt="Events Icon">Events</a></li>
+<li><a href="Books.html"><img src="Images/book.svg" alt="Books Icon">Books</a></li>
+<li><a href="Songs.html"><img src="Images/song.svg" alt="Songs Icon">Songs</a></li>
+<li><a href="MusicAlbums.html"><img src="Images/music_album.svg" alt="Music Albums Icon">Music Albums</a></li>
+<li><a href="Podcasts.html"><img src="Images/podcast.svg" alt="Podcasts Icon">Podcasts</a></li>
+<li><a href="Podcast Albums.html"><img src="Images/podcast_album.svg" alt="Podcasts Album Icon">Podcast Albums</a></li>
+<li><a href="Articles.html"><img src="Images/article.svg" alt="Articles Icon">Articles</a></li>
 </ul>
 </aside>
-
 
 <section class="main-content">
   <div class="main-container">
@@ -402,8 +401,6 @@
 </section>
 
 
-
-
 <section class="bottom-content">
   <div class="content-row">
     <div class="content-box">
@@ -477,14 +474,14 @@
 </div>
 
 
-<script>
-  const currentUrl = window.location.href;
-  document.querySelectorAll('.nav-menu a, .sidebar a').forEach(link => {
-      if (link.href === currentUrl) {
-          link.classList.add("active");
-      }
-  });
-</script>
+
+<script src="JS/include.js"></script>
+  <script>
+    includeHTML("header", "Universal/Header.html");
+    includeHTML("sidebar", "Universal/Sidebar.html");
+    includeHTML("bottomContent", "Universal/BottomContent.html");
+  </script>
+<script src="JS/topBar.js"></script>
 </body>
 </html>
 
