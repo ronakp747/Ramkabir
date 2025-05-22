@@ -1,37 +1,47 @@
-/* Reset & Global Styles */
-* {
+
+* { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+}
+
+main {
+    margin-left: 270px;
+    padding: 20px;
+    margin-top: 86px;
+
 }
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+
 }
 
-/* Main Layout */
-main {
-    margin-left: 270px;
-    padding: 20px;
-    margin-top: 86px;
+hr { 
+    margin-bottom: 10px;
+
 }
 
-/* Header (Top Navigation Bar) */
+
+/*  Header */
 header {
     background-color: #f3f3f3;
-    color: #000;
+    color: #000000;
     padding: 20px;
-    border-bottom: 1px solid #ccc;
+    border: 1px solid #ccc;
     width: 100%;
+    position: relative;
     height: 86px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
 }
 
 .header-container {
@@ -41,69 +51,114 @@ header {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+
 }
 
-/* Logo Section */
+
+
+/*  Logo in top left corner formatting  */
 .logo {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    align-items: center; 
+    gap: 10px;  
+
 }
 
-.logo img {
+.logo-1 img {
     width: 100px;
-    max-height: 83px;
     object-fit: contain;
+    max-height: 83px;
+
 }
 
-/* Top Navigation Menu */
+.logo-2 img {
+    width: 100px;
+    object-fit: contain;
+    max-height: 83px;
+
+}
+
+
+
+
+
+/* Navigation menu at top of the screen   */
 .nav-menu {
     display: flex;
+    gap: 0px;
+
+}
+
+.right-side{ 
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
 }
 
 .nav-menu ul {
-    list-style: none;
+    list-style-type: none;
     display: flex;
+    margin: 0;
+    padding: 0;
+
 }
 
 .nav-menu li {
     margin: 0;
+
 }
 
 .nav-menu a {
-    color: #000;
-    background-color: #f3f3f3;
+    color: #000000;
     text-decoration: none;
     font-size: 16px;
-    padding: 25px;
+    background-color: #f3f3f3;
+    padding: 25px 25px; 
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     transition: background-color 0.3s;
+    position: relative;
+
 }
 
 .nav-menu a:hover {
     color: #ff6358;
+
 }
 
-/* Top Nav Active Indicator */
-.nav-menu a.active::before,
-.nav-menu a:hover::before {
+.nav-menu a:hover::before{
     content: "";
     position: absolute;
-    top: -9px;
+    top: -9px; 
     left: 0;
     width: 100%;
     height: 5px;
     background-color: #ff6348;
     opacity: 1;
+
 }
 
-/* Donate Button */
+
+
+.nav-menu a.active::before{
+    content: "";
+    position: absolute;
+    top: -9px;  
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ff6348;
+    opacity: 1;
+
+}
+
+/*  Donate button in top right corner  */
 .donate-button {
     margin-left: 20px;
+
 }
 
 .donate-button button {
@@ -111,81 +166,96 @@ header {
     border: none;
     padding: 13px 18px;
     font-size: 15px;
-    border-radius: 50px;
     cursor: pointer;
+    border-radius: 50px;
     transition: all 0.3s ease;
+
 }
 
 .donate-button button a {
     color: #fff;
     text-decoration: none;
     display: block;
+
 }
 
 .donate-button button:hover {
     background-color: #ff4500;
     transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0, 0.2);
+
 }
 
-/* Sidebar */
+/*  Sidebar Navigation for all the buttons  */
 .sidebar {
     width: 275px;
     background-color: white;
+    padding-top: 10px;
     position: fixed;
     top: 86px;
     left: 0;
-    height: calc(100% - 86px);
+    height: calc(100% - 80px);
     border-right: 1px solid #ccc;
-    padding: 10px 20px 0 0;
-    overflow-y: auto;
+    font-family: Arial, sans-serif;
+    padding-right: 20px;
+
 }
 
-/* Sidebar Labels */
 .sidebar-label {
     font-size: 15px;
     color: #8f8fa7;
-    padding: 15px 20px;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 20px;
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
+
 }
 
 .sidebar-label:hover {
     color: #ff6348;
+
 }
 
-/* Sidebar Links */
-.sidebar ul {
-    list-style: none;
+.sidebar ul { 
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
 }
 
 .sidebar ul li {
-    margin: 0;
     padding-bottom: 10px;
+    text-align: left;
+    margin: 0;
+
 }
 
 .sidebar ul li a {
     position: relative;
-    display: block;
+    text-decoration: none;
     color: #8f8fa7;
     font-size: 18px;
-    text-decoration: none;
-    padding: 15px 20px;
+    display: block;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+    width: calc(100% + 20px);
     transition: background-color 0.3s ease;
+    margin: 0;
+
 }
 
-.sidebar ul li a img {
+
+.sidebar ul li a img{
     width: 20px;
     height: 20px;
     margin-right: 30px;
     vertical-align: middle;
-}
 
-/* Sidebar Hover and Active State */
-.sidebar ul li a:hover {
-    background-color: rgba(250, 191, 180, 0.3);
-    color: #ff6348;
 }
 
 .sidebar ul li a::before {
@@ -193,48 +263,74 @@ header {
     position: absolute;
     left: 0;
     top: 0;
-    width: 6px;
+    width: 6px; 
     height: 100%;
-    background-color: #ff6348;
+    background-color: #ff6348; 
     opacity: 0;
+    transition: opacity 0.3s ease;
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
-    transition: opacity 0.3s ease;
+
 }
 
-.sidebar ul li a:hover::before,
+.sidebar ul li a:hover::before  {
+    opacity: 1;
+
+}
+
 .sidebar ul li a.active::before {
     opacity: 1;
+    background-color: #ff6348; /* Optional: change color if needed */
+    
 }
 
-/* Sidebar Image Icon Hover */
+.sidebar ul li a:hover {
+    background-color: rgba(250, 191, 180, 0.3);
+    color: #ff6348;
+
+}
+
+.sidebar img {
+    width: 24px;
+    height: 24px;
+    transition: fill 0.3s ease;
+
+}
+
 .sidebar a:hover img {
     fill: #ff6348;
+
 }
 
-/* Main Content */
+
+/*  Main content section to allow everything to fit in the specific box  */
 .main-content {
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 40px 20px;
     margin-left: 270px;
-    margin-top: 86px;
+    margin-top: 50px;
     background-color: white;
+    border-top: 1px solid #ddd;
+    border: none;
+
 }
 
-/* Bottom Bar */
+/*  Orange bar at bottom of screen  */
 .bottom-bar {
     position: fixed;
+    background-color: #ff7e4f;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100px;
-    background-color: #ff7e4f;
     z-index: 1000;
+
 }
 
-/* Bottom Content Section */
+/* lower content section where credits are for each page   */
 .bottom-content {
     display: flex;
     flex-wrap: wrap;
@@ -244,16 +340,19 @@ header {
     margin-bottom: 120px;
     background-color: #f9f9f9;
     border-top: 1px solid #ddd;
+
 }
 
 .content-box {
     flex: 1 1 200px;
     margin: 10px;
+    margin-bottom: 10px;
+
 }
 
 .content-row {
     display: flex;
-    gap: 10px;
+    gap:10px;
     margin-bottom: 40px;
 }
 
@@ -261,64 +360,86 @@ header {
     font-size: 18px;
     color: #333;
     margin-bottom: 10px;
+
 }
 
 .content-box ul {
     list-style: none;
     padding: 0;
+
 }
 
 .content-box ul li {
-    font-size: 14px;
     color: #666;
+    font-size: 14px;
     margin-bottom: 6px;
+
 }
 
-/* Social Icons in Sidebar */
+
+/*  Social Icons on the left side navigation  */
 .social-icons {
     display: flex;
     flex-direction: column;
     gap: 10px;
     font-size: 15px;
+
 }
 
-.social-icons a {
-    text-decoration: none;
-    color: black;
+.social-icnons a {
     width: 26px;
     height: 26px;
     margin-right: 10px;
     transition: transform 0.2s ease;
+    text-decoration: none;
+    color: black;
+    
 }
 
 .social-icons a img {
     width: 30px;
     height: 30px;
-    vertical-align: middle;
+    margin-right: 8px;
     transition: transform 0.2s ease;
+    display: inline-block;
+    vertical-align: middle;
+    
+}
+
+.social-icons a:link, .social-icons a:visited {
+    color: black; 
+
 }
 
 .social-icons a:hover img {
     transform: scale(1.2);
+
 }
 
-/* Page Headers and Breadcrumbs */
+
+/* headers for each page  including the navigation path label */
 .main-container {
     width: 90%;
     max-width: 1200px;
     padding: 40px;
     background-color: transparent;
+
 }
 
 h3 {
+    text-align: left;
+    margin-bottom: 10px;
     color: #ff6348;
     font-size: 25px;
-    margin-bottom: 10px;
+
 }
 
 h4 {
+    text-align: left;
+    margin-bottom: 10px;
     color: #333;
     font-size: 12px;
-    margin-bottom: 10px;
-    text-align: left;
+
 }
+
+
