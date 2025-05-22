@@ -1,8 +1,10 @@
-
-fetch('layout/TopBar.html')
-    .then(response => response.text())
-    .then(data => document.getElementById('TopBar').innerHTML = data);
-fetch('layout/SideBar.html')
-    .then(response => response.text())
-    .then(data => document.getElementById('SideBar').innerHTML = data);
-
+function loadComponent(id, file) {
+    fetch(file)
+      .then(res => res.text())
+      .then(data => document.getElementById(id).innerHTML = data);
+  }
+  
+  loadComponent('header-container', 'header.html');
+  loadComponent('sidebar-container', 'sidebar.html');
+  loadComponent('footer-container', 'footer.html');
+  
