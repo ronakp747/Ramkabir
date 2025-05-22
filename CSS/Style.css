@@ -147,8 +147,7 @@ header {
   color: #ff6348; /* Optional: make text match your hover color */
 }
 
-.nav-menu a.active::before, 
-.sidebar a.active::before {
+.nav-menu a.active::before{
     content: "";
     position: absolute;
     top: -9px;  
