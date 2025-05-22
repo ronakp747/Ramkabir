@@ -127,7 +127,14 @@
 <div class="bottom-bar">
 </div>
 
-<script src="JC/layout.js"></script>
+<script>
+  fetch('layout/TopBar.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('TopBar').innerHTML = data);
+  fetch('layout/SideBar.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('SideBar').innerHTML = data);
+</script>
 <script src="JS/topBar.js"></script>
 <script src="JS/contactUs.js"></script>
 </body>
