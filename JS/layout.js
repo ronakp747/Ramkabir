@@ -4,6 +4,5 @@ function loadComponent(id, file) {
       .then(data => document.getElementById(id).innerHTML = data);
   }
   
-  loadComponent('header-container', 'header.html');
-  loadComponent('sidebar-container', 'sidebar.html');
-  loadComponent('footer-container', 'footer.html');
+  loadComponent('TopBar', 'TopBar.html');
+  loadComponent('SideBar', 'SideBar.html');
