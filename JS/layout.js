@@ -7,4 +7,3 @@ function loadComponent(id, file) {
   loadComponent('header-container', 'header.html');
   loadComponent('sidebar-container', 'sidebar.html');
   loadComponent('footer-container', 'footer.html');
-  
