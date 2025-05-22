@@ -141,8 +141,14 @@ header {
 
 }
 
+.nav-menu a.active,
+.sidebar a.active {
+  background-color: rgba(250, 191, 180, 0.3); /* or any transparent bg you prefer */
+  color: #ff6348; /* Optional: make text match your hover color */
+}
 
-.nav-menu a.active::before {
+.nav-menu a.active::before, 
+.sidebar a.active::before {
     content: "";
     position: absolute;
     top: -9px;  
