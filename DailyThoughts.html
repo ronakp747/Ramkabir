@@ -106,25 +106,8 @@
 <div class="bottom-bar">
 </div>
 
-<script>
-  fetch('layout/TopBar.html')
-    .then(response => response.text())
-    .then(data => document.getElementById('TopBar').innerHTML = data);
-  fetch('layout/SideBar.html')
-    .then(response => response.text())
-    .then(data => document.getElementById('SideBar').innerHTML = data);
-</script>
-<script>
 
-  const currentUrl = window.location.href;
-    document.querySelectorAll('.nav-menu a, .sidebar a').forEach(link => {
-        if (link.href === currentUrl) {
-            link.classList.add("active");
-        }
-    });
-  
-  
-  </script>
+<script src="JS/layoutLoader.js"></script>
 <script src="JS/dailyThought.js"></script>
 </body>
 </html>
