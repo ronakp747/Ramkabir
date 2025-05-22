@@ -114,7 +114,17 @@
     .then(response => response.text())
     .then(data => document.getElementById('SideBar').innerHTML = data);
 </script>
-<script src="JS/topBar.js"></script>
+<script>
+
+  const currentUrl = window.location.href;
+    document.querySelectorAll('.nav-menu a, .sidebar a').forEach(link => {
+        if (link.href === currentUrl) {
+            link.classList.add("active");
+        }
+    });
+  
+  
+  </script>
 <script src="JS/dailyThought.js"></script>
 </body>
 </html>
