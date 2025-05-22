@@ -10,7 +10,8 @@
 </head>
 <body>
 
-<div id="layout-container"></div>
+<div id="TopBar"></div>
+<div id="SideBar"></div>
 
 <section class="main-content">
   <div class="main-container">
@@ -25,14 +26,21 @@
     </div>
   </div>
 </section>
-
+<div id="BottomContent"></div>
 
 
 <script>
-    fetch('universal.html')
+    fetch('layout/TopBar.html')
       .then(response => response.text())
-      .then(data => document.getElementById('layout-container').innerHTML = data);
+      .then(data => document.getElementById('TopBar').innerHTML = data);
+    fetch('layout/SideBar.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('TopBar').innerHTML = data);
+    fetch('layout/BottomContent.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('TopBar').innerHTML = data);
 </script>
+
 <script src="JS/topBar.js"></script>
 <script src="JS/dailyThought.js"></script>
 </body>
