@@ -21,5 +21,15 @@
     </div>
 </header>
 
-<script src="JS/topBar.js"></script>
+<script>
+
+const currentUrl = window.location.href;
+  document.querySelectorAll('.nav-menu a, .sidebar a').forEach(link => {
+      if (link.href === currentUrl) {
+          link.classList.add("active");
+      }
+  });
+
+
+</script>
 
