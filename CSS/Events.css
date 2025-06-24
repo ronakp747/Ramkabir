@@ -27,11 +27,11 @@
     margin-bottom: 20px;
   }
   
-  .event-date, .event-time {
+  .event-date, .event-time, .event-location {
     padding-left: 15px;  /* Indent */
     margin: 5px 0;
     text-align: left;    /* Align left inside the centered card */
-    font-size: 20px;
+    font-size: 12px;
   }
 
   .event-title {
@@ -41,7 +41,7 @@
   }
   
   .event-description {
-    font-size: 20px;       /* Smaller font size for description */
+    font-size: 12px;       /* Smaller font size for description */
     text-align: left;        /* Keep description left-aligned (default) */
     margin-bottom: 10px;     /* Optional: space below description */
   }
