@@ -1,17 +1,23 @@
-.event-box {
-    flex: 1 1 30%;
-    max-width: 350px;
+.events-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .event-box {
+    flex: 0 0 48%;       /* about half the width */
+    max-width: 48%;
     height: 230px;
     border: 1px solid #ccc;
     padding: 15px;
-    margin: 0 10px 20px;
+    margin-bottom: 20px;
     box-sizing: border-box;
     border-radius: 5px;
     background: #fafafa;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    overflow: hidden;
     font-family: sans-serif;
   }
   
