@@ -3,36 +3,25 @@ const sheetCSVUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-.../pub?outp
 fetch(sheetCSVUrl)
   .then(res => res.text())
   .then(csvText => {
-    console.log('Raw CSV:', csvText);
-
     const parsed = Papa.parse(csvText, { header: true });
     const rows = parsed.data;
-
-    console.log('Parsed rows:', rows);
-    if (!rows.length) {
-      console.warn('No event rows found!');
-      return;
-    }
-    console.log('Columns:', Object.keys(rows[0]));
 
     let html = '<div class="events-row">';
     let count = 0;
 
     rows.forEach((row, i) => {
-      if (!row['Show/Hide'] || row['Show/Hide'].toLowerCase().trim() !== 'show') {
-        console.log(`Skipping row ${i} due to Show/Hide: "${row['Show/Hide']}"`);
-        return;
-      }
+      if (row['Show/Hide']?.toLowerCase().trim() !== 'show') return;
 
       const title = row['Event Name']?.trim() || '';
       const date = row['Date']?.trim() || '';
       const time = row['Time']?.trim() || '';
-      // Check for both 'Location' and 'location' keys to be safe
-      const location = (row['Location'] || row['location'] || '').trim();
+      const location = row['location']?.trim() || '';
       const description = row['Description']?.trim() || '';
+      const imageUrl = row['Image URL']?.trim() || '';
 
       html += `
         <div class="event-box">
+          ${imageUrl ? `<img class="event-image" src="${imageUrl}" alt="Event Image">` : ''}
           <h2 class="event-title">${title}</h2>
           <p class="event-description">${description}</p>
           <p class="event-location"><strong>Location:</strong> ${location}</p>
