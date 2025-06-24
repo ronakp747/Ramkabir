@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
   }
   
   .event-box {
