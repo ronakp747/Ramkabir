@@ -2,15 +2,17 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    flex-wrap: wrap;
   }
   
   .event-box {
-    flex: 1 1 30%; /* roughly 3 per row with spacing */
+    flex: 1 1 30%;
     border: 1px solid #ccc;
     padding: 15px;
-    margin: 0 10px;
+    margin: 10px;
     box-sizing: border-box;
     border-radius: 5px;
     background: #fafafa;
     text-align: center;
   }
+  
