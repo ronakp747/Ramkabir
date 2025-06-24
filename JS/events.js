@@ -1,28 +1,27 @@
-const sheetCSVUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQBZBkLKhdKdhhQ8cTsPlUp1Cp5MkoRI4piPoeMnONSgQHigK82O7ccCeYvFbpOolLX_c9pui9PqzjD/pub?output=csv';
+const sheetCSVUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-.../pub?output=csv';
 
 fetch(sheetCSVUrl)
   .then(res => res.text())
   .then(csvText => {
-    const lines = csvText.trim().split('\n');
-    const headers = lines[0].split(',');
+    const parsed = Papa.parse(csvText, { header: true });
+    const rows = parsed.data;
 
     let html = '<div class="events-row">';
     let count = 0;
 
-    for (let i = 1; i < lines.length; i++) {
-      const cols = lines[i].split(',');
+    rows.forEach((row, i) => {
+      if (row['Show/Hide']?.toLowerCase().trim() !== 'show') return;
 
-      if (cols.length < 6) continue;
-      if (cols[5].toLowerCase().trim() !== 'show') continue;
-
-      const title = cols[0].trim();
-      const date = cols[1].trim();
-      const time = cols[2].trim();
-      const location = cols[3].trim();
-      const description = cols[4].trim();
+      const title = row['Event Name']?.trim() || '';
+      const date = row['Date']?.trim() || '';
+      const time = row['Time']?.trim() || '';
+      const location = row['location']?.trim() || '';
+      const description = row['Description']?.trim() || '';
+      const imageUrl = row['Image URL']?.trim() || '';
 
       html += `
         <div class="event-box">
+          ${imageUrl ? `<img class="event-image" src="${imageUrl}" alt="Event Image">` : ''}
           <h2 class="event-title">${title}</h2>
           <p class="event-description">${description}</p>
           <p class="event-location"><strong>Location:</strong> ${location}</p>
@@ -32,10 +31,10 @@ fetch(sheetCSVUrl)
       `;
 
       count++;
-      if (count % 3 === 0 && i !== lines.length - 1) {
+      if (count % 3 === 0 && i !== rows.length - 1) {
         html += '</div><div class="events-row">';
       }
-    }
+    });
 
     html += '</div>';
     document.getElementById('events-list').innerHTML = html;
