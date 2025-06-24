@@ -1,7 +1,7 @@
 .event-box {
     flex: 1 1 30%;        /* take about 30% width per box (3 per row) */
     max-width: 350px;     /* max width so boxes don’t stretch too much */
-    height: 200px;        /* fixed height so cards have same height */
+    height: 150px;        /* fixed height so cards have same height */
     border: 1px solid #ccc;
     padding: 15px;
     margin: 0 10px 20px;  /* horizontal and bottom spacing */
