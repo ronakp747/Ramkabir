@@ -6,22 +6,30 @@ fetch(sheetCSVUrl)
     const parsed = Papa.parse(csvText, { header: true });
     const rows = parsed.data;
 
+    if (!rows || rows.length === 0) {
+      console.warn('No data found in CSV.');
+      return;
+    }
+
     let html = '<div class="events-row">';
     let count = 0;
 
     rows.forEach((row, i) => {
-      if (row['Show/Hide']?.toLowerCase().trim() !== 'show') return;
+      // Check "Show/Hide" column ignoring case and spaces
+      const showHide = (row['Show/Hide'] || row['show/hide'] || '').toLowerCase().trim();
+      if (showHide !== 'show') return;
 
-      const title = row['Event Name']?.trim() || '';
-      const date = row['Date']?.trim() || '';
-      const time = row['Time']?.trim() || '';
-      const location = row['location']?.trim() || '';
-      const description = row['Description']?.trim() || '';
-      const imageUrl = row['Image URL']?.trim() || '';
+      // Extract event fields (case-insensitive keys)
+      const title = (row['Event Name'] || row['event name'] || '').trim();
+      const date = (row['Date'] || row['date'] || '').trim();
+      const time = (row['Time'] || row['time'] || '').trim();
+      const location = (row['Location'] || row['location'] || '').trim();
+      const description = (row['Description'] || row['description'] || '').trim();
+
+      if (!title) return; // skip rows without a title
 
       html += `
         <div class="event-box">
-          ${imageUrl ? `<img class="event-image" src="${imageUrl}" alt="Event Image">` : ''}
           <h2 class="event-title">${title}</h2>
           <p class="event-description">${description}</p>
           <p class="event-location"><strong>Location:</strong> ${location}</p>
@@ -31,7 +39,7 @@ fetch(sheetCSVUrl)
       `;
 
       count++;
-      if (count % 3 === 0 && i !== rows.length - 1) {
+      if (count % 2 === 0 && i !== rows.length - 1) {
         html += '</div><div class="events-row">';
       }
     });
