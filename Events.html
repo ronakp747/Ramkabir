@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Events</title>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
     <link rel="stylesheet" href="CSS/Events.css">
     <link rel="stylesheet" href="CSS/Style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -106,7 +107,7 @@
     .then(response => response.text())
     .then(data => document.getElementById('SideBar').innerHTML = data);
 </script>
-<script src="JS/topBar.js"></script>
-<script src="JS/events.js"></script>
+<script src="JS/topBar.js" defer></script>
+<script src="JS/events.js" defer></script>
 </body>
 </html>
