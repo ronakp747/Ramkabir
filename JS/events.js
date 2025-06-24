@@ -27,7 +27,8 @@ fetch(sheetCSVUrl)
           <h2 class="event-title">${title}</h2>
           <p class="event-description">${description}</p>
           <p class="event-location"><strong>Location:</strong> ${location}</p>
-          <p class="event-date-time"><strong>Date:</strong> ${date} | <strong>Time:</strong> ${time}</p>
+          <p class="event-date"><strong>Date:</strong> ${date}</p>
+          <p class="event-time"><strong>Time:</strong> ${time}</p>
         </div>
       `;
 
