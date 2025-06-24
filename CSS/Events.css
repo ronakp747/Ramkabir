@@ -1,18 +1,16 @@
 .events-row {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 20px;
   }
   
   .event-box {
-    flex: 1 1 30%;
-    margin: 10px;
+    flex: 1 1 30%; /* roughly 3 per row with spacing */
     border: 1px solid #ccc;
     padding: 15px;
-    background: #fafafa;
-    border-radius: 5px;
+    margin: 0 10px;
     box-sizing: border-box;
+    border-radius: 5px;
+    background: #fafafa;
     text-align: center;
   }
-  
