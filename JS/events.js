@@ -1,11 +1,16 @@
 const sheetCSVUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-.../pub?output=csv';
 
 fetch(sheetCSVUrl)
-  .then(res => res.text())
+  .then(res => {
+    console.log('Fetch response status:', res.status);
+    return res.text();
+  })
   .then(csvText => {
+    console.log('CSV text loaded:', csvText.slice(0, 200)); // first 200 chars
     const parsed = Papa.parse(csvText, { header: true });
-    const rows = parsed.data;
+    console.log('Parsed data:', parsed.data);
 
+    const rows = parsed.data;
     if (!rows || rows.length === 0) {
       console.warn('No data found in CSV.');
       return;
@@ -15,18 +20,17 @@ fetch(sheetCSVUrl)
     let count = 0;
 
     rows.forEach((row, i) => {
-      // Check "Show/Hide" column ignoring case and spaces
       const showHide = (row['Show/Hide'] || row['show/hide'] || '').toLowerCase().trim();
+      console.log(`Row ${i} Show/Hide:`, showHide);
       if (showHide !== 'show') return;
 
-      // Extract event fields (case-insensitive keys)
       const title = (row['Event Name'] || row['event name'] || '').trim();
+      if (!title) return;
+
       const date = (row['Date'] || row['date'] || '').trim();
       const time = (row['Time'] || row['time'] || '').trim();
       const location = (row['Location'] || row['location'] || '').trim();
       const description = (row['Description'] || row['description'] || '').trim();
-
-      if (!title) return; // skip rows without a title
 
       html += `
         <div class="event-box">
