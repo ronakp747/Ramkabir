@@ -1,7 +1,7 @@
 .event-box {
     flex: 1 1 30%;        /* take about 30% width per box (3 per row) */
     max-width: 350px;     /* max width so boxes don’t stretch too much */
-    height: 150px;        /* fixed height so cards have same height */
+    height: 200px;        /* fixed height so cards have same height */
     border: 1px solid #ccc;
     padding: 15px;
     margin: 0 10px 20px;  /* horizontal and bottom spacing */
@@ -33,4 +33,16 @@
     margin: 5px 0;
     text-align: left;    /* Align left inside the centered card */
   }
+
+  .event-title {
+    text-align: center;      /* Centers the event title */
+    margin-bottom: 10px;     /* Optional: space below title */
+  }
+  
+  .event-description {
+    font-size: 0.9rem;       /* Smaller font size for description */
+    text-align: left;        /* Keep description left-aligned (default) */
+    margin-bottom: 10px;     /* Optional: space below description */
+  }
+  
   
