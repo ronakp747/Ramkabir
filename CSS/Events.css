@@ -1,18 +1,30 @@
-.events-row {
+.events-container {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
   
   .event-box {
-    flex: 1 1 30%;
+    width: 32%; /* Ensures 3 per row with spacing */
+    margin-bottom: 20px;
     border: 1px solid #ccc;
-    padding: 15px;
-    margin: 10px;
+    padding: 20px;
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: 8px;
     background: #fafafa;
+    text-align: left; /* Aligns content to the left */
+  }
+  
+  .event-title {
     text-align: center;
+    font-size: 1.25em;
+    margin-bottom: 10px;
+  }
+  
+  .event-description,
+  .event-location,
+  .event-date-time {
+    margin: 6px 0;
+    padding-left: 10px; /* Indent */
   }
   
