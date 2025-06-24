@@ -31,7 +31,7 @@ fetch(sheetCSVUrl)
       `;
 
       count++;
-      if (count % 3 === 0 && i !== rows.length - 1) {
+      if (count % 2 === 0 && i !== rows.length - 1) {
         html += '</div><div class="events-row">';
       }
     });

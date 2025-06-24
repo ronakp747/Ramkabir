@@ -1,36 +1,22 @@
-.event-box {
-    flex: 1 1 30%;
-    max-width: 350px;
-    height: 230px;
+.events-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .event-box {
+    flex: 0 0 48%;       /* fixed width about half container minus some space */
+    max-width: 48%;      /* fix max width to match flex basis */
+    height: 300px;       /* fixed height */
     border: 1px solid #ccc;
     padding: 15px;
-    margin: 0 10px 20px;
+    margin-bottom: 20px;
     box-sizing: border-box;
     border-radius: 5px;
     background: #fafafa;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    overflow: hidden;
-    font-family: sans-serif;
-  }
-  
-  /* Title - biggest */
-  .event-title {
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  /* Everything else - same size and left-aligned */
-  .event-description,
-  .event-location,
-  .event-date,
-  .event-time {
-    font-size: 14px;
-    text-align: left;
-    margin: 5px 0;
-    padding-left: 10px;
   }
   
