@@ -1,30 +1,31 @@
 const sheetCSVUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQBZBkLKhdKdhhQ8cTsPlUp1Cp5MkoRI4piPoeMnONSgQHigK82O7ccCeYvFbpOolLX_c9pui9PqzjD/pub?output=csv';
 
 fetch(sheetCSVUrl)
-  .then(res => {
-    if (!res.ok) throw new Error(`Network error: ${res.statusText}`);
-    return res.text();
-  })
+  .then(res => res.text())
   .then(csvText => {
     const parsed = Papa.parse(csvText, { header: true });
     const rows = parsed.data;
 
-    if (!rows.length) {
-      document.getElementById('events-list').innerHTML = '<p>No events found.</p>';
-      return;
-    }
+    console.log('All rows from CSV:', rows);
 
     let html = '<div class="events-row">';
     let count = 0;
 
     rows.forEach((row, i) => {
-      if (!row['Show/Hide'] || row['Show/Hide'].toLowerCase().trim() !== 'show') return;
+      console.log(`Row ${i}: Show/Hide='${row['Show/Hide']}'`);
+      
+      if (row['Show/Hide']?.toLowerCase().trim() !== 'show') {
+        console.log(`Skipping row ${i} because Show/Hide is not "show"`);
+        return;
+      }
 
       const title = row['Event Name']?.trim() || '';
       const date = row['Date']?.trim() || '';
       const time = row['Time']?.trim() || '';
       const location = row['Location']?.trim() || '';
       const description = row['Description']?.trim() || '';
+
+      console.log(`Adding row ${i}:`, { title, date, time, location, description });
 
       html += `
         <div class="event-box">
@@ -37,7 +38,7 @@ fetch(sheetCSVUrl)
       `;
 
       count++;
-      if (count % 2 === 0 && i !== rows.length - 1) {
+      if (count % 3 === 0 && i !== rows.length - 1) {
         html += '</div><div class="events-row">';
       }
     });
@@ -45,7 +46,4 @@ fetch(sheetCSVUrl)
     html += '</div>';
     document.getElementById('events-list').innerHTML = html;
   })
-  .catch(err => {
-    console.error('Failed to load events:', err);
-    document.getElementById('events-list').innerHTML = '<p>Error loading events.</p>';
-  });
+  .catch(err => console.error('Failed to load events:', err));
