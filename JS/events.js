@@ -6,9 +6,14 @@ fetch(sheetCSVUrl)
     const lines = csvText.trim().split('\n');
     const headers = lines[0].split(',');
 
-    let html = '';
+    let html = '<div class="events-row">'; // container for a row
+    let count = 0;
+
     for(let i = 1; i < lines.length; i++) {
       const cols = lines[i].split(',');
+
+      // Check Show/Hide column - skip if "Hide"
+      if (cols[5].toLowerCase() !== 'show') continue;
 
       const title = cols[0];
       const description = cols[1];
@@ -24,7 +29,15 @@ fetch(sheetCSVUrl)
           <p class="event-date-time"><strong>Date:</strong> ${date} | <strong>Time:</strong> ${time}</p>
         </div>
       `;
+
+      count++;
+      // Every 3 events, close current row and start a new one
+      if (count % 3 === 0 && i !== lines.length - 1) {
+        html += '</div><div class="events-row">';
+      }
     }
+
+    html += '</div>'; // close last row
 
     document.getElementById('events-list').innerHTML = html;
   })
