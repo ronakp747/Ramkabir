@@ -1,49 +1,55 @@
-.event-box {
-    flex: 1 1 30%;        /* take about 30% width per box (3 per row) */
-    max-width: 350px;     /* max width so boxes don’t stretch too much */
-    height: 200px;        /* fixed height so cards have same height */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f7f7f7;
+    color: #222;
+  }
+  
+  .events-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+  }
+  
+  .event-box {
+    flex: 1 1 30%;
+    max-width: 350px;
+    height: 250px;
     border: 1px solid #ccc;
     padding: 15px;
-    margin: 0 10px 20px;  /* horizontal and bottom spacing */
+    margin: 0 10px 20px;
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: 6px;
     background: #fafafa;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     overflow: hidden;
   }
-
   
-  .event-box p {
-    padding-left: 15px; /* indent paragraphs */
-    margin: 5px 0;      /* space between lines */
-  }
-
-  .events-row {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap; /* prevent wrapping to keep exactly 3 per row */
-    margin-bottom: 20px;
-  }
-  
-  .event-date, .event-time, .event-location {
-    padding-left: 15px;  /* Indent */
-    margin: 5px 0;
-    text-align: left;    /* Align left inside the centered card */
-    font-size: 12px;
-  }
-
   .event-title {
-    text-align: center;      /* Centers the event title */
-    margin-bottom: 10px;     /* Optional: space below title */
-    font-size: 25px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
   }
   
   .event-description {
-    font-size: 12px;       /* Smaller font size for description */
-    text-align: left;        /* Keep description left-aligned (default) */
-    margin-bottom: 10px;     /* Optional: space below description */
+    font-size: 13px;
+    color: #444;
+    text-align: left;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
   }
   
+  .event-location,
+  .event-date,
+  .event-time {
+    font-size: 12px;
+    color: #555;
+    text-align: left;
+    margin: 3px 0;
+    font-family: 'Verdana', sans-serif;
+  }
   

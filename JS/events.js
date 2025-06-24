@@ -12,22 +12,9 @@ fetch(sheetCSVUrl)
     for (let i = 1; i < lines.length; i++) {
       const cols = lines[i].split(',');
 
-      // Debug: Log each row
-      console.log(`Row ${i}:`, cols);
+      if (cols.length < 6) continue;
+      if (cols[5].toLowerCase().trim() !== 'show') continue;
 
-      // Check for empty or incomplete rows to skip
-      if (cols.length < 6) {
-        console.log(`Skipping row ${i}: not enough columns`);
-        continue;
-      }
-
-      // Skip if "Show/Hide" column is not "show"
-      if (cols[5].toLowerCase().trim() !== 'show') {
-        console.log(`Skipping row ${i}: Show/Hide is '${cols[5]}'`);
-        continue;
-      }
-
-      // Extract columns according to your sheet setup
       const title = cols[0].trim();
       const date = cols[1].trim();
       const time = cols[2].trim();
@@ -45,18 +32,12 @@ fetch(sheetCSVUrl)
       `;
 
       count++;
-
-      // Every 3 events, close current row and start a new one
       if (count % 3 === 0 && i !== lines.length - 1) {
         html += '</div><div class="events-row">';
       }
     }
 
     html += '</div>';
-
-    // Insert all the generated HTML into your events container
     document.getElementById('events-list').innerHTML = html;
   })
-  .catch(err => {
-    console.error('Failed to load events:', err);
-  });
+  .catch(err => console.error('Failed to load events:', err));
