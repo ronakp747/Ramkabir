@@ -35,7 +35,7 @@ header {
     position: relative;
     height: 86px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: fixed;
     top: 0;
@@ -456,6 +456,12 @@ h4 {
     gap: 6px; 
     align-items: center;
     border-radius: 6px;
+    position: absolute;
+    left: 0px; 
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1100;
+
     
   }
   
