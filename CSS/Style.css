@@ -453,12 +453,12 @@ h4 {
     cursor: pointer;
     padding: 0;
     margin-right: 15px;
-    gap: 0px;
+    gap: 0px; 
     
   }
   
   .hamburger .bar {
-    height: 4px;              /* <<< This controls line thickness */
+    height: 4px;              
     width: 100%;
     background-color: #000;
     border-radius: 1px;
