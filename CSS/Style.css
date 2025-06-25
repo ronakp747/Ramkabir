@@ -440,29 +440,26 @@ h4 {
     font-size: 12px;
 
 }
+ 
 
-
-.hamburger {
+  .hamburger {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 28px;
     height: 22px;
-    background: none;
+    background: #ff6348;
     border: none;
     cursor: pointer;
     padding: 0;
     margin-right: 15px;
+    font-size: 60px;
   }
   
   .hamburger .bar {
-    height: 2px;              /* <<< This controls line thickness */
+    height: 4px;              /* <<< This controls line thickness */
     width: 100%;
     background-color: #000;
     border-radius: 1px;
     transition: all 0.3s ease;
   }
-  
-
-
-  
