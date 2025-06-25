@@ -12,13 +12,12 @@ fetch(sheetCSVUrl)
     for (let i = 1; i < lines.length; i++) {
       const cols = lines[i].split(',');
 
-      // Skip if not enough columns
+      
       if (cols.length < 6) continue;
 
-      // Check Show/Hide column (6th column, index 5)
+      
       const showHide = cols[5].toLowerCase().trim();
 
-      // Show only if 'show'; hide if 'hide' or empty or anything else
       if (showHide !== 'show') continue;
 
       const title = cols[0].trim();
