@@ -191,7 +191,7 @@ header {
     position: fixed;
     top: 86px;
     width: 275px;
-    bottom: 120px;
+    bottom: 140px;
     height: auto;
     background-color: white;
     padding-top: 10px;
@@ -205,24 +205,6 @@ header {
     transform: translateX(0);
   }
 
-
-.sidebar-label {
-    font-size: 15px;
-    color: #8f8fa7;
-    padding-left: 20px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-right: 20px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-
-}
-
-.sidebar-label:hover {
-    color: #ff6348;
-
-}
 
 .sidebar ul { 
     list-style-type: none;
