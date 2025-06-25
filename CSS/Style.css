@@ -462,7 +462,7 @@ h4 {
   .hamburger .bar {
     height: 3px;              
     width: 18px;
-    background-color: #000;
+    background-color: white;
     border-radius: 1px;
     transition: all 0.3s ease;
     margin: 4px, 0;
