@@ -9,15 +9,15 @@ fetch(sheetCSVUrl)
     let html = '<div class="events-row">';
     let count = 0;
 
-    for (let i = 1; i < lines.length; i++) {
+    // Limit to first 20 rows of data (excluding the header)
+    const maxRows = Math.min(20, lines.length - 1);
+
+    for (let i = 1; i <= maxRows; i++) {
       const cols = lines[i].split(',');
 
-      
       if (cols.length < 6) continue;
 
-      
       const showHide = cols[5].toLowerCase().trim();
-
       if (showHide !== 'show') continue;
 
       const title = cols[0].trim();
@@ -37,7 +37,7 @@ fetch(sheetCSVUrl)
       `;
 
       count++;
-      if (count % 3 === 0 && i !== lines.length - 1) {
+      if (count % 3 === 0 && i !== maxRows) {
         html += '</div><div class="events-row">';
       }
     }
