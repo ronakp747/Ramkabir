@@ -185,23 +185,24 @@ header {
 }
 /* Sidebar hidden by default */
 .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
     position: fixed;
-    top: 86px;             /* Start right below the top bar */
-    left: 0;
-    width: 100%;           /* Full width dropdown */
-    max-height: 0;         /* Hidden by default */
-    overflow: hidden;
+    top: 86px;
+    width: 275px;
+    bottom: 160px;
+    height: auto;
     background-color: white;
-    border-bottom: 1px solid #ccc;
-    transition: max-height 0.3s ease;
-    z-index: 1001;
+    padding-top: 10px;
+    padding-right: 20px;
+    font-family: Arial, sans-serif;
+    z-index: 9999; 
   }
   
+  /* Sidebar visible */
   .sidebar.active {
-    max-height: 400px;     /* Adjust max height as needed */
-    overflow-y: auto;      /* Scroll if content is taller */
+    transform: translateX(0);
   }
-  
 
 
 .sidebar ul { 
@@ -311,10 +312,6 @@ header {
     width: 100%;
     height: 100px;
     z-index: 1000;
-    display: center;
-    justify-content: center;
-    align-items: center;
-    
 
 }
 
