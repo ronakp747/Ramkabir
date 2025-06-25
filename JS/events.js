@@ -1,48 +1,52 @@
 const sheetCSVUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSryEqgNxEKpF4HteGTSrk8J0gLLtjyhs2ilFfbE7yrY57pyGguGdGCPom2H3aPwCNDYOGHUAjO04Ry/pub?output=csv';
 
-fetch(sheetCSVUrl)
-  .then(res => res.text())
-  .then(csvText => {
-    const lines = csvText.trim().split('\n');
-    const headers = lines[0].split(',');
+function loadEvents() {
+  // Add cache buster to avoid cached responses
+  const urlWithCacheBuster = sheetCSVUrl + '&_=' + new Date().getTime();
 
-    let html = '<div class="events-row">';
-    let count = 0;
+  fetch(urlWithCacheBuster)
+    .then(res => res.text())
+    .then(csvText => {
+      const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+      const data = parsed.data;
 
-    // Limit to first 20 rows of data (excluding the header)
-    const maxRows = Math.min(20, lines.length - 1);
+      let html = '<div class="events-row">';
+      let count = 0;
+      const maxRows = Math.min(20, data.length);
 
-    for (let i = 1; i <= maxRows; i++) {
-      const cols = lines[i].split(',');
+      for (let i = 0; i < maxRows; i++) {
+        const row = data[i];
 
-      if (cols.length < 6) continue;
+        // Check Show/Hide column, skip if missing or not 'show'
+        if (!row['Show/Hide'] || row['Show/Hide'].toLowerCase().trim() !== 'show') continue;
 
-      const showHide = cols[5].toLowerCase().trim();
-      if (showHide !== 'show') continue;
+        const title = row['Title']?.trim() || '';
+        const date = row['Date']?.trim() || '';
+        const time = row['Time']?.trim() || '';
+        const location = row['Location']?.trim() || '';
+        const description = row['Description']?.trim() || '';
 
-      const title = cols[0].trim();
-      const date = cols[1].trim();
-      const time = cols[2].trim();
-      const location = cols[3].trim();
-      const description = cols[4].trim();
+        html += `
+          <div class="event-box">
+            <h2 class="event-title">${title}</h2>
+            <p class="event-description">${description}</p>
+            <p class="event-location"><strong>Location:</strong> ${location}</p>
+            <p class="event-date"><strong>Date:</strong> ${date}</p>
+            <p class="event-time"><strong>Time:</strong> ${time}</p>
+          </div>
+        `;
 
-      html += `
-        <div class="event-box">
-          <h2 class="event-title">${title}</h2>
-          <p class="event-description">${description}</p>
-          <p class="event-location"><strong>Location:</strong> ${location}</p>
-          <p class="event-date"><strong>Date:</strong> ${date}</p>
-          <p class="event-time"><strong>Time:</strong> ${time}</p>
-        </div>
-      `;
-
-      count++;
-      if (count % 4 === 0 && i !== maxRows) {
-        html += '</div><div class="events-row">';
+        count++;
+        if (count % 4 === 0 && i !== maxRows - 1) {
+          html += '</div><div class="events-row">';
+        }
       }
-    }
+      html += '</div>';
 
-    html += '</div>';
-    document.getElementById('events-list').innerHTML = html;
-  })
-  .catch(err => console.error('Failed to load events:', err));
+      document.getElementById('events-list').innerHTML = html;
+    })
+    .catch(err => console.error('Failed to load events:', err));
+}
+
+// Call once to load events on page load
+loadEvents();
