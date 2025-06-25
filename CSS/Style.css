@@ -476,7 +476,8 @@ h4 {
     position: fixed;
     top: 86px;
     width: 275px;
-    height: calc(100% - 60px);
+    bottom: 120px;
+    height: auto;
     background-color: white;
     border-right: 1px solid #ccc;
     padding-top: 10px;
