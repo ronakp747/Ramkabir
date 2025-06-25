@@ -446,8 +446,8 @@ h4 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 50px;
     background-color: #ff6348;
     border: none;
     cursor: pointer;
@@ -468,13 +468,4 @@ h4 {
   }
 
 
-  .hamburger button {
-    background-color: #e04819;
-    border: none;
-    padding: 13px 18px;
-    font-size: 15px;
-    cursor: pointer;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-
-}
+ 
