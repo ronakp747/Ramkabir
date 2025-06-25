@@ -1,21 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const checkForSidebar = setInterval(() => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const sidebar = document.getElementById('sidebar');
+// Get hamburger button and sidebar element
+const menuToggle = document.getElementById('menu-toggle');
+const sidebar = document.getElementById('sidebar');
 
-    if (menuToggle && sidebar) {
-      clearInterval(checkForSidebar);
+// Get all links inside sidebar
+const sidebarLinks = sidebar.querySelectorAll('a');
 
-      menuToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
-      });
+// Toggle sidebar visibility when hamburger clicked
+menuToggle.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
 
-      // Close sidebar when any link is clicked
-      sidebar.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          sidebar.classList.remove('active');
-        });
-      });
-    }
-  }, 100); // check every 100ms
+// Hide sidebar when any sidebar link is clicked
+sidebarLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+  });
 });
