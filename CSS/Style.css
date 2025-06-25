@@ -7,7 +7,6 @@
 }
 
 main {
-    margin-left: 270px;
     padding: 20px;
     margin-top: 86px;
 
@@ -191,7 +190,7 @@ header {
     position: fixed;
     top: 86px;
     width: 275px;
-    bottom: 140px;
+    bottom: 160px;
     height: auto;
     background-color: white;
     padding-top: 10px;
@@ -322,7 +321,6 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 40px 20px;
-    margin-left: 270px;
     margin-bottom: 120px;
     background-color: #f9f9f9;
     border-top: 1px solid #ddd;
