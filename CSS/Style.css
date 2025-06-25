@@ -455,6 +455,8 @@ h4 {
     margin-right: 15px;
     gap: 6px; 
     align-items: center;
+    border-radius: 6px;
+    left: -10px;
     
   }
   
