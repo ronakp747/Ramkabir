@@ -1,15 +1,21 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const checkForSidebar = setInterval(() => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
 
-  const menuToggle = document.getElementById('menu-toggle');
-  const sidebar = document.getElementById('sidebar');
-  const sidebarLinks = document.querySelectorAll('#sidebar a');
+    if (menuToggle && sidebar) {
+      clearInterval(checkForSidebar);
 
-  menuToggle.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
-  });
+      menuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+      });
 
-  sidebarLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      sidebar.classList.remove('active');
-    });
-  });
-
+      // Close sidebar when any link is clicked
+      sidebar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          sidebar.classList.remove('active');
+        });
+      });
+    }
+  }, 100); // check every 100ms
+});
