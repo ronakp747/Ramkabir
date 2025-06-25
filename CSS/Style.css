@@ -443,10 +443,12 @@ h4 {
 
 .hamburger {
     font-size: 80px;
-    background: none;
+    background: yellow;
     border: none;
     cursor: pointer;
     color: #000;
     margin-right: 15px;
+    padding: 10px 15px;
   }
+
   
