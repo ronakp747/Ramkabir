@@ -448,7 +448,7 @@ h4 {
     justify-content: space-between;
     width: 20px;
     height: 20px;
-    background-color: yellow;
+    background-color: #ff6348;
     border: none;
     cursor: pointer;
     padding: 0;
@@ -459,10 +459,22 @@ h4 {
   }
   
   .hamburger .bar {
-    height: 2px;              
+    height: 3px;              
     width: 18px;
     background-color: #000;
     border-radius: 1px;
     transition: all 0.3s ease;
     margin: 1px 0;
   }
+
+
+  .hamburger button {
+    background-color: #e04819;
+    border: none;
+    padding: 13px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+
+}
