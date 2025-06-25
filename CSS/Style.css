@@ -444,6 +444,7 @@ h4 {
 .hamburger {
     font-size: 60px;
     border: none;
+    background: none;
     cursor: pointer;
     color: #000;
     margin-right: 15px;
