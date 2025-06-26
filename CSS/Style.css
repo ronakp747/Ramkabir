@@ -1,3 +1,9 @@
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
 * {
     margin: 0;
     padding: 0;
@@ -187,12 +193,14 @@
     margin-top: 86px;
     background-color: white;
     border-top: 1px solid #ddd;
+    flex: 1;
   }
   
   .bottom-content {
     padding: 20px;
     margin-top: 40px;
     background-color: #ff7e4f;
+    min-height: 200px;
   }
   
   .content-row {
@@ -276,7 +284,7 @@
     justify-content: center;
     width: 50px;
     height: 50px;
-    background-color: blue;
+    background-color: #ff6348;
     border: none;
     cursor: pointer;
     gap: 6px;
