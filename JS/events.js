@@ -1,48 +1,46 @@
 const sheetCSVUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSryEqgNxEKpF4HteGTSrk8J0gLLtjyhs2ilFfbE7yrY57pyGguGdGCPom2H3aPwCNDYOGHUAjO04Ry/pub?output=csv';
 
-fetch(sheetCSVUrl)
+// Fetch the CSV with cache busting to ensure fresh data
+fetch(sheetCSVUrl + '&cacheBust=' + new Date().getTime())
   .then(res => res.text())
   .then(csvText => {
-    const lines = csvText.trim().split('\n');
-    const headers = lines[0].split(',');
+    Papa.parse(csvText, {
+      header: true,
+      skipEmptyLines: true,
+      complete: function(results) {
+        const events = results.data;
+        const container = document.getElementById('events-list');
+        container.innerHTML = ''; // Clear old events
+        const today = new Date();
 
-    let html = '<div class="events-row">';
-    let count = 0;
+        let html = '<div class="events-row">';
+        let count = 0;
 
-    // Limit to first 20 rows of data (excluding the header)
-    const maxRows = Math.min(20, lines.length - 1);
+        events.slice(0, 20).forEach((event, index) => {
+          const showHide = event['Show/Hide']?.toLowerCase().trim();
+          const eventDate = new Date(event['Date']);
 
-    for (let i = 1; i <= maxRows; i++) {
-      const cols = lines[i].split(',');
+          if (showHide === 'show' && eventDate >= today) {
+            html += `
+              <div class="event-box">
+                <h2 class="event-title">${event['Title']}</h2>
+                <p class="event-description">${event['Description']}</p>
+                <p class="event-location"><strong>Location:</strong> ${event['Location']}</p>
+                <p class="event-date"><strong>Date:</strong> ${event['Date']}</p>
+                <p class="event-time"><strong>Time:</strong> ${event['Time']}</p>
+              </div>
+            `;
 
-      if (cols.length < 6) continue;
+            count++;
+            if (count % 4 === 0 && index !== 19) {
+              html += '</div><div class="events-row">';
+            }
+          }
+        });
 
-      const showHide = cols[5].toLowerCase().trim();
-      if (showHide !== 'show') continue;
-
-      const title = cols[0].trim();
-      const date = cols[1].trim();
-      const time = cols[2].trim();
-      const location = cols[3].trim();
-      const description = cols[4].trim();
-
-      html += `
-        <div class="event-box">
-          <h2 class="event-title">${title}</h2>
-          <p class="event-description">${description}</p>
-          <p class="event-location"><strong>Location:</strong> ${location}</p>
-          <p class="event-date"><strong>Date:</strong> ${date}</p>
-          <p class="event-time"><strong>Time:</strong> ${time}</p>
-        </div>
-      `;
-
-      count++;
-      if (count % 4 === 0 && i !== maxRows) {
-        html += '</div><div class="events-row">';
+        html += '</div>';
+        container.innerHTML = html.trim() === '<div class="events-row"></div>' ? '<p>No upcoming events.</p>' : html;
       }
-    }
-
-    html += '</div>';
-    document.getElementById('events-list').innerHTML = html;
+    });
   })
   .catch(err => console.error('Failed to load events:', err));
