@@ -155,9 +155,12 @@ html, body {
     text-decoration: none;
     color: #8f8fa7;
     font-size: 18px;
-    display: block;
-    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
     transition: background-color 0.3s ease;
+    border-radius: 6px;
   }
   
   .sidebar ul li a::before {
@@ -200,7 +203,7 @@ html, body {
     padding: 20px;
     margin-top: 40px;
     background-color: #ff7e4f;
-    min-height: 200px;
+    min-height: 250px;
   }
   
   .content-row {
