@@ -317,6 +317,7 @@ header {
 
 /* lower content section where credits are for each page   */
 .bottom-content {
+    margin-bottom: 20px;
     display: center;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -324,13 +325,14 @@ header {
     margin-bottom: 120px;
     background-color: #f9f9f9;
     border-top: 1px solid #ddd;
+    justify-content: center;
 
 }
 
 .content-box {
     flex: 1 1 200px;
-    margin: 10px;
-    margin-bottom: 10px;
+    margin: 10px auto;
+    max-width: 300px;
 
 }
 
@@ -338,6 +340,7 @@ header {
     display: flex;
     gap:10px;
     margin-bottom: 40px;
+    justify-content: center;
 }
 
 .content-box h3 {
