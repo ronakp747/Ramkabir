@@ -26,7 +26,7 @@ fetch(sheetCSVUrl)
       const location = cols[3].trim();
       const description = cols[4].trim();
 
-      html += 
+      html += `
         <div class="event-box">
           <h2 class="event-title">${title}</h2>
           <p class="event-description">${description}</p>
@@ -34,7 +34,7 @@ fetch(sheetCSVUrl)
           <p class="event-date"><strong>Date:</strong> ${date}</p>
           <p class="event-time"><strong>Time:</strong> ${time}</p>
         </div>
-      ;
+      `;
 
       count++;
       if (count % 4 === 0 && i !== maxRows) {
