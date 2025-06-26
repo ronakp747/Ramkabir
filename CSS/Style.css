@@ -317,7 +317,7 @@ header {
 
 /* lower content section where credits are for each page   */
 .bottom-content {
-    display: flex;
+    display: center;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 40px 20px;
