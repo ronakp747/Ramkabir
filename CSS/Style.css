@@ -140,6 +140,8 @@ html, body {
     padding: 10px 20px;
     font-family: Arial, sans-serif;
     z-index: 9999;
+    max-height: 500px;
+    overflow-y: auto;
   }
   
   .sidebar.active {
