@@ -6,17 +6,17 @@ fetch(sheetCSVUrl)
     const lines = csvText.trim().split('\n');
     const headers = lines[0].split(',');
 
-    let html = '<div class="events-row">';
-    let count = 0;
+    let html = '';
+    let rowCount = 0;
+    let currentRow = '';
 
-    // Limit to first 20 rows of data (excluding the header)
     const maxRows = Math.min(20, lines.length - 1);
+    let cardCount = 0;
 
     for (let i = 1; i <= maxRows; i++) {
       const cols = lines[i].split(',');
 
       if (cols.length < 6) continue;
-
       const showHide = cols[5].toLowerCase().trim();
       if (showHide !== 'show') continue;
 
@@ -26,7 +26,7 @@ fetch(sheetCSVUrl)
       const location = cols[3].trim();
       const description = cols[4].trim();
 
-      html += `
+      currentRow += `
         <div class="event-box">
           <h2 class="event-title">${title}</h2>
           <p class="event-description">${description}</p>
@@ -36,13 +36,22 @@ fetch(sheetCSVUrl)
         </div>
       `;
 
-      count++;
-      if (count % 4 === 0 && i !== maxRows) {
-        html += '</div><div class="events-row">';
+      cardCount++;
+
+      if (cardCount % 3 === 0) {
+        html += `<div class="events-row">${currentRow}</div>`;
+        currentRow = '';
       }
     }
 
-    html += '</div>';
+    // Handle leftover cards (less than 3 in the last row)
+    if (currentRow.trim() !== '') {
+      html += `<div class="events-row">${currentRow}</div>`;
+    }
+
     document.getElementById('events-list').innerHTML = html;
   })
-  .catch(err => console.error('Failed to load events:', err));
+  .catch(err => {
+    console.error('Failed to load events:', err);
+    document.getElementById('events-list').innerHTML = '<p>Unable to load events at this time.</p>';
+  });

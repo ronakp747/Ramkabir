@@ -7,7 +7,7 @@ body {
   .events-row {
     display: flex;
     justify-content: space-between;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     margin-bottom: 20px;
   }
   
