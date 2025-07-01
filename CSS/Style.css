@@ -181,7 +181,7 @@ html, body {
   }
   
   .sidebar a:hover img {
-    transform: scale(1);
+    transform: scale(.75);
   }
   
   .main-content {
@@ -282,7 +282,7 @@ html, body {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background-color: #ff6348;
+    background-color: green;
     border: none;
     cursor: pointer;
     gap: 6px;
