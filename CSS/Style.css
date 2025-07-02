@@ -132,7 +132,7 @@ html, body {
   
   .sidebar {
     position: fixed;
-    top: 86px; /* just under the fixed header */
+    top: 86px; /* just under he fixed header */
     left: 0;
     width: 275px;
     height: calc(100vh - 86px); /* full height minus header */
@@ -289,7 +289,7 @@ html, body {
     align-items: center;
     border-radius: 6px;
   }
-  
+
   .hamburger .bar {
     height: 2px;
     width: 18px;
