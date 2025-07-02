@@ -162,7 +162,7 @@ html, body {
   .sidebar ul li a {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     padding: 12px 16px;
     border-radius: 8px;
     text-decoration: none;
@@ -183,8 +183,8 @@ html, body {
   
 
   .sidebar ul li a img {
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
     flex-shrink: 0;
   }
   
