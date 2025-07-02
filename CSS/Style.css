@@ -79,7 +79,12 @@ header {
   display: flex;
   gap: 15px;
   align-items: center;
-  margin-left: 200px;
+  margin-left: auto;
+  padding-left: 40px;
+}
+
+.spacer {
+  flex-grow: 1;
 }
 
 .nav-menu ul {
