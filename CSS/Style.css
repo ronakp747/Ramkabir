@@ -43,15 +43,18 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    gap: 10px;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
+    height: 86px;
   }
   
   .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
+    margin-left: 5px;
   }
   
   .logo-1 img,
@@ -301,6 +304,7 @@ html, body {
     gap: 6px;
     align-items: center;
     border-radius: 6px;
+    margin-right: 5px;
   }
 
   .hamburger .bar {
@@ -308,5 +312,10 @@ html, body {
     width: 18px;
     background-color: white;
     border-radius: 1px;
+  }
+
+  .hamburger:hover {
+    background-color: rgba(250, 191, 180, 0.3);
+    transition: background-color 0.3s ease;
   }
   
