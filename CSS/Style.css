@@ -132,7 +132,7 @@ html, body {
   
   .sidebar {
     position: fixed;
-    top: 86px; /* just under he fixed header */
+    top: 87px; /* just under he fixed header */
     left: 0;
     width: 275px;
     height: calc(100vh - 86px); /* full height minus header */
@@ -164,6 +164,7 @@ html, body {
   
   .sidebar ul li {
     width: 100%;
+    margin-bottom: 12px;
   }
   
   .sidebar ul li a {
