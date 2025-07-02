@@ -148,16 +148,8 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    border: 2px solid #ff6348;
-    box-sizing: border-box;
   }
-  .sidebar hr {
-    border: none;               /* remove default */
-    height: 2px;                /* thickness */
-    background-color: #ff6348;  /* orange color */
-    margin: 12px 0;             /* spacing */
-    border-radius: 1px;
-  }
+  
   .sidebar-buttons {
     width: 100%;
   }
@@ -303,7 +295,7 @@ html, body {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background-color: #ff6348;
+    background-color: #ff7e4f;
     border: none;
     cursor: pointer;
     gap: 6px;
