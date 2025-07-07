@@ -224,8 +224,11 @@ header {
 }
 
 .bottom-content {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 20px;
   padding: 20px;
-  margin-top: 40px;
   background-color: #ff7e4f;
   min-height: 250px;
 }
@@ -243,7 +246,7 @@ header {
 }
 
 .content-box h3 {
-  font-size: 18px;
+  font-size: 16px;
   color: black;
   margin-bottom: 10px;
 }
