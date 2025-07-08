@@ -1,25 +1,22 @@
 const sheetCSVUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSryEqgNxEKpF4HteGTSrk8J0gLLtjyhs2ilFfbE7yrY57pyGguGdGCPom2H3aPwCNDYOGHUAjO04Ry/pub?output=csv';
 
+const defaultImage = 'https://ramkabir.org/img/logo-icon.jpg';
+
 fetch(sheetCSVUrl)
   .then(res => res.text())
   .then(csvText => {
-    // Split lines robustly, handling Windows and Unix line endings
     const lines = csvText.trim().split(/\r?\n/);
-    
-    // We will store events here
     const events = [];
-
     const maxRows = Math.min(20, lines.length - 1);
 
     for (let i = 1; i <= maxRows; i++) {
-      // Split with a regex that respects commas inside quotes (improves CSV parsing)
+      // Split respecting commas inside quotes
       const cols = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
 
-      if (!cols || cols.length < 6) continue;
+      if (!cols || cols.length < 7) continue; // Make sure there's a 7th column for image URL
 
       if (cols[5].toLowerCase().trim() !== 'show') continue;
 
-      // Trim and remove quotes if any
       const clean = str => str.replace(/^"|"$/g, '').trim();
 
       const title = clean(cols[0]);
@@ -27,21 +24,23 @@ fetch(sheetCSVUrl)
       const time = clean(cols[2]);
       const location = clean(cols[3]);
       const description = clean(cols[4]);
+      const imageUrlRaw = clean(cols[6]);
+      const imageUrl = imageUrlRaw ? imageUrlRaw : defaultImage;
 
-      // Parse date MM/DD/YY or MM/DD/YYYY robustly
+      // Parse date for sorting
       const parts = dateStr.split('/');
-      if (parts.length !== 3) continue; // skip if malformed
+      if (parts.length !== 3) continue;
 
       let [month, day, year] = parts.map(n => parseInt(n, 10));
-      if (year < 100) year += 2000; // convert 2-digit year to 4-digit
+      if (year < 100) year += 2000;
 
       const dateObj = new Date(year, month - 1, day);
-      if (isNaN(dateObj)) continue; // skip invalid dates
+      if (isNaN(dateObj)) continue;
 
-      events.push({ title, dateStr, dateObj, time, location, description });
+      events.push({ title, dateStr, dateObj, time, location, description, imageUrl });
     }
 
-    // Sort ascending by date (most upcoming first)
+    // Sort by date ascending
     events.sort((a, b) => a.dateObj - b.dateObj);
 
     let html = '';
@@ -50,6 +49,7 @@ fetch(sheetCSVUrl)
     events.forEach((event, idx) => {
       currentRow += `
         <div class="event-box">
+          <img class="event-image" src="${event.imageUrl}" alt="${event.title} image" onerror="this.onerror=null;this.src='${defaultImage}';" />
           <h2 class="event-title">${event.title}</h2>
           <p class="event-description">${event.description}</p>
           <p class="event-location"><strong>Location:</strong> ${event.location}</p>
@@ -64,7 +64,6 @@ fetch(sheetCSVUrl)
       }
     });
 
-    // Add leftover cards if any
     if (currentRow.trim() !== '') {
       html += `<div class="events-row">${currentRow}</div>`;
     }

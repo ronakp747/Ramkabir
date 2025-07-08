@@ -52,3 +52,12 @@ body {
     font-family: 'Verdana', sans-serif;
   }
   
+
+  .event-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Makes the image square */
+    object-fit: cover;    /* Crops/scales nicely */
+    border-radius: 6px 6px 0 0; /* Rounded top corners, optional */
+    margin-bottom: 10px;
+  }
+  
