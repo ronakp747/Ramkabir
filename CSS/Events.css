@@ -12,8 +12,8 @@ body {
   }
   
   .event-box {
-    flex: 0 0 calc(50% - 10px);
-    max-width: calc(50% - 10px);
+    flex: 0 0 calc(47.5% - 10px);
+    max-width: calc(47.5% - 10px);
     margin: 0 5px 20px; /* Add some horizontal spacing */
     border: 1px solid #ccc;
     padding: 15px;
@@ -52,7 +52,3 @@ body {
     font-family: 'Verdana', sans-serif;
   }
   
-
-  .position-1 { order: 1; }  /* left */
-  .position-2 { order: 2; }  /* middle */
-  .position-3 { order: 3; }
