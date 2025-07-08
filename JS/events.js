@@ -7,27 +7,29 @@ fetch(sheetCSVUrl)
   .then(csvText => {
     const lines = csvText.trim().split(/\r?\n/);
     const events = [];
+
     const maxRows = Math.min(20, lines.length - 1);
 
+    // Helper to clean quotes and trim
+    const clean = str => str.replace(/^"|"$/g, '').trim();
+
     for (let i = 1; i <= maxRows; i++) {
-      // Split respecting commas inside quotes
       const cols = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
 
-      if (!cols || cols.length < 7) continue; // Make sure there's a 7th column for image URL
+      if (!cols || cols.length < 7) continue; // Now 7 columns (added image)
 
-      if (cols[5].toLowerCase().trim() !== 'show') continue;
-
-      const clean = str => str.replace(/^"|"$/g, '').trim();
+      if (clean(cols[5]).toLowerCase() !== 'show') continue;
 
       const title = clean(cols[0]);
       const dateStr = clean(cols[1]);
       const time = clean(cols[2]);
       const location = clean(cols[3]);
       const description = clean(cols[4]);
-      const imageUrlRaw = clean(cols[6]);
-      const imageUrl = imageUrlRaw ? imageUrlRaw : defaultImage;
+      let imageUrl = clean(cols[6]);
 
-      // Parse date for sorting
+      if (!imageUrl) imageUrl = defaultImage;
+
+      // Parse date MM/DD/YY or MM/DD/YYYY robustly
       const parts = dateStr.split('/');
       if (parts.length !== 3) continue;
 
@@ -40,7 +42,7 @@ fetch(sheetCSVUrl)
       events.push({ title, dateStr, dateObj, time, location, description, imageUrl });
     }
 
-    // Sort by date ascending
+    // Sort by upcoming date
     events.sort((a, b) => a.dateObj - b.dateObj);
 
     let html = '';
@@ -49,7 +51,7 @@ fetch(sheetCSVUrl)
     events.forEach((event, idx) => {
       currentRow += `
         <div class="event-box">
-          <img class="event-image" src="${event.imageUrl}" alt="${event.title} image" onerror="this.onerror=null;this.src='${defaultImage}';" />
+          <img src="${event.imageUrl}" alt="${event.title}" class="event-image" onerror="this.onerror=null;this.src='${defaultImage}';" />
           <h2 class="event-title">${event.title}</h2>
           <p class="event-description">${event.description}</p>
           <p class="event-location"><strong>Location:</strong> ${event.location}</p>
