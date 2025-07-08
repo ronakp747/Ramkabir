@@ -6,14 +6,14 @@ body {
   
   .events-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 20px;
     margin-bottom: 30px;
   }
   
   .event-box {
-    flex: 0 0 calc(47.5% - 10px);
-    max-width: calc(47.5% - 10px);
+    flex: 0 0 calc(35% - 10px);
+    max-width: calc(35% - 10px);
     margin: 0 5px 20px; /* Add some horizontal spacing */
     border: 1px solid #ccc;
     padding: 15px;
