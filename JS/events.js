@@ -39,7 +39,7 @@ fetch(sheetCSVUrl)
 
       cardCount++;
 
-      if (cardCount % 3 === 0) {
+      if (cardCount % 2 === 0) {
         html += `<div class="events-row">${currentRow}</div>`;
         currentRow = '';
       }
