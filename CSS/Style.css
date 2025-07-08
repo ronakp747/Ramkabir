@@ -57,9 +57,14 @@ header {
   margin-left: 5px;
 }
 
-.logo-1 img,
+.logo-1 img {
+  width: 40px;       /* smaller width */
+  height: auto;      /* keep aspect ratio */
+  object-fit: contain;
+}
+
 .logo-2 img {
-  width: 100px;
+  width: 100px;      /* keep original size */
   max-height: 83px;
   object-fit: contain;
 }
