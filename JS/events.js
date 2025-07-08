@@ -3,40 +3,51 @@ const sheetCSVUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSryEqgNxEK
 fetch(sheetCSVUrl)
   .then(res => res.text())
   .then(csvText => {
-    const lines = csvText.trim().split('\n');
-
+    // Split lines robustly, handling Windows and Unix line endings
+    const lines = csvText.trim().split(/\r?\n/);
+    
+    // We will store events here
     const events = [];
 
     const maxRows = Math.min(20, lines.length - 1);
 
     for (let i = 1; i <= maxRows; i++) {
-      const cols = lines[i].split(',');
+      // Split with a regex that respects commas inside quotes (improves CSV parsing)
+      const cols = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
 
-      if (cols.length < 6) continue;
+      if (!cols || cols.length < 6) continue;
+
       if (cols[5].toLowerCase().trim() !== 'show') continue;
 
-      const title = cols[0].trim();
-      const dateStr = cols[1].trim();
-      const time = cols[2].trim();
-      const location = cols[3].trim();
-      const description = cols[4].trim();
+      // Trim and remove quotes if any
+      const clean = str => str.replace(/^"|"$/g, '').trim();
 
-      // Parse dateStr (MM/DD/YY) to Date object
-      const [month, day, year] = dateStr.split('/').map(n => parseInt(n, 10));
-      const fullYear = year < 100 ? 2000 + year : year; // convert 2-digit year
-      const dateObj = new Date(fullYear, month - 1, day);
+      const title = clean(cols[0]);
+      const dateStr = clean(cols[1]);
+      const time = clean(cols[2]);
+      const location = clean(cols[3]);
+      const description = clean(cols[4]);
+
+      // Parse date MM/DD/YY or MM/DD/YYYY robustly
+      const parts = dateStr.split('/');
+      if (parts.length !== 3) continue; // skip if malformed
+
+      let [month, day, year] = parts.map(n => parseInt(n, 10));
+      if (year < 100) year += 2000; // convert 2-digit year to 4-digit
+
+      const dateObj = new Date(year, month - 1, day);
+      if (isNaN(dateObj)) continue; // skip invalid dates
 
       events.push({ title, dateStr, dateObj, time, location, description });
     }
 
-    // Sort events ascending by date
+    // Sort ascending by date (most upcoming first)
     events.sort((a, b) => a.dateObj - b.dateObj);
 
-    // Build HTML with 2 events per row
     let html = '';
     let currentRow = '';
 
-    events.forEach((event, index) => {
+    events.forEach((event, idx) => {
       currentRow += `
         <div class="event-box">
           <h2 class="event-title">${event.title}</h2>
@@ -47,13 +58,13 @@ fetch(sheetCSVUrl)
         </div>
       `;
 
-      if ((index + 1) % 2 === 0) {
+      if ((idx + 1) % 2 === 0) {
         html += `<div class="events-row">${currentRow}</div>`;
         currentRow = '';
       }
     });
 
-    // Add leftover event if any
+    // Add leftover cards if any
     if (currentRow.trim() !== '') {
       html += `<div class="events-row">${currentRow}</div>`;
     }
