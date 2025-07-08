@@ -7,11 +7,10 @@ fetch(sheetCSVUrl)
     const headers = lines[0].split(',');
 
     let html = '';
-    let rowCount = 0;
     let currentRow = '';
+    let cardCount = 0;
 
     const maxRows = Math.min(20, lines.length - 1);
-    let cardCount = 0;
 
     for (let i = 1; i <= maxRows; i++) {
       const cols = lines[i].split(',');
@@ -26,8 +25,10 @@ fetch(sheetCSVUrl)
       const location = cols[3].trim();
       const description = cols[4].trim();
 
+      const positionClass = `position-${(cardCount % 3) + 1}`; // 1, 2, 3
+
       currentRow += `
-        <div class="event-box">
+        <div class="event-box ${positionClass}">
           <h2 class="event-title">${title}</h2>
           <p class="event-description">${description}</p>
           <p class="event-location"><strong>Location:</strong> ${location}</p>
@@ -44,7 +45,7 @@ fetch(sheetCSVUrl)
       }
     }
 
-    // Handle leftover cards (less than 3 in the last row)
+    // Add remaining cards if not multiple of 3
     if (currentRow.trim() !== '') {
       html += `<div class="events-row">${currentRow}</div>`;
     }
