@@ -40,7 +40,7 @@ fetch(sheetCSVUrl)
     events.forEach((event, idx) => {
       currentRow += `
         <div class="event-box">
-          <img class="event-image" src="https://ramkabir.org/img/logo-icon.jpg" alt="Event Image">
+          <img class="event-image" src="https://phpstack-578376-1871005.cloudwaysapps.com/storage/thumbnails/event/LtPCDALwAp9lsQtPTDxi2g7rPgnBu1BpQP99ES0q.png" alt="Event Image">
           <h2 class="event-title">${event.title}</h2>
           <p class="event-description">${event.description}</p>
           <p class="event-location"><strong>Location:</strong> ${event.location}</p>
