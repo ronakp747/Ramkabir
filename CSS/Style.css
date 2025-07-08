@@ -63,7 +63,7 @@ header {
   object-fit: contain;
 }
 
-.logo-2 img {
+.logo-2 {
   width: 100px;      /* keep original size */
   max-height: 83px;
   object-fit: contain;
