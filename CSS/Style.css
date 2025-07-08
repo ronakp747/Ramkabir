@@ -57,8 +57,8 @@ header {
   margin-left: 5px;
 }
 
-.logo-1 img {
-  width: 40px;       /* smaller width */
+.logo-1 {
+  width: 90px;       /* smaller width */
   height: auto;      /* keep aspect ratio */
   object-fit: contain;
 }
