@@ -53,5 +53,12 @@ body {
   }
   
 
- 
   
+  .event-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    margin-bottom: 10px;
+  }
