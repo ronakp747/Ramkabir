@@ -170,7 +170,7 @@ header {
   width: 100%;
 }
 .sidebar.active {
-  transform: translateX(0); /* slide in */
+  transform: translateX(0); 
 }
 
 
