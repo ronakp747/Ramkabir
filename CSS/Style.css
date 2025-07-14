@@ -170,7 +170,7 @@ header {
   justify-content: center;
   align-items: flex-start;
 }
-
+/* Add some horizontal spacing */
 .sidebar-buttons {
   width: 100%;
 }
