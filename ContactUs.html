@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ContactUs</title>
+    <link rel="stylesheet" href="CSS/ContactUs.css">
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+<div id="TopBar"></div>
+<div id="SideBar"></div>
+    
+<section class="main-content">
+  <div class="main-container">
+    <h3>Contact Us</h3>
+    <hr>
+    <form action="https://formspree.io/f/xqaqbqzz" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first_name" placeholder="Required" required>
+      </div>
+        <div class="form-group">
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last_name" placeholder="Required" required>
+      </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group">
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" placeholder="Required" required>
+      </div>
+        <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Required" required>
+      </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group">
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Required" required></textarea>
+      </div>
+      </div>
+  
+      <button type="submit">Send</button>
+    </form>
+</div>
+</section>
+
+
+
+
+<section class="bottom-content">
+  <div class="content-row">
+    <div class="content-box">
+      <h3>Top Artists</h3>
+      <hr> 
+      <ul>
+        <li>Kishore Kumar</li>
+        <li>Kumar Sanu</li>
+        <li>Rahat Fateh Ali Khan</li>
+        <li>Anirudh Ravichander</li>
+        <li>Shankar Mahadevan</li>
+        <li>Hariharan</li>
+      </ul>
+      </div>
+    <div class="content-row">
+      <div class="content-box">
+      <h3>Music</h3>
+      <hr> 
+      <ul>
+       <li>Bhajan</li>
+       <li>Aarti</li>
+       <li>Dhoon</li>
+        <li>Katha Sarita</li>
+        <li>Amrutvani</li>
+        <li>Meditation</li>
+     </ul>
+    </div>
+    </div>
+    <div class="content-row">
+      <div class="content-box">
+      <h3>Top Author</h3>
+      <hr> 
+      <ul>
+        <li>Kishore Kumar</li>
+        <li>Kumar Sanu</li>
+       <li>Rahat Fateh Ali Khan</li>
+       <li>Anirudh Ravichander</li>
+       <li>Shankar Mahadevan</li>
+       <li>Hariharan</li>
+      </ul>
+      </div>
+    </div>
+    <div class="content-row">
+      <div class="content-box">
+      <h3>Podcasts</h3>
+      <hr> 
+      <ul>
+        <li>Amrutvani</li>
+        <li>Kathasarita</li>
+        <li>Sabha Shrot</li>
+        <li>Savand</li>
+        <li>Morning Words</li>
+        <li>Mantra</li>
+      </ul>
+      </div>
+    </div>
+    <div class="content-box"> 
+      <h3>Follow Us</h3>
+      <hr> 
+      <div class="social-icons">
+      <a href="#"><img src="Images/facebook.png" alt="Facebook">@username</a>
+      <a href="#"><img src="Images/x.png" alt="x">@username</a>
+      <a href="#"><img src="Images/instagram.png" alt="Instagram">@username</a>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<script>
+  fetch('layout/TopBar.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('TopBar').innerHTML = data);
+  fetch('layout/SideBar.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('SideBar').innerHTML = data);
+</script>
+<script src="JS/topBar.js"></script>
+<script src="JS/contactUs.js"></script>
+<script src="JS/sidebar.js"></script>
+<script>
+    Promise.all([
+      fetch('layout/TopBar.html').then(res => res.text()).then(data => {
+        document.getElementById('TopBar').innerHTML = data;
+      }),
+      fetch('layout/SideBar.html').then(res => res.text()).then(data => {
+        document.getElementById('SideBar').innerHTML = data;
+      })
+    ]).then(() => {
+      const menuToggle = document.getElementById('menu-toggle');
+      const sidebar = document.getElementById('sidebar');
+
+      if (menuToggle && sidebar) {
+        menuToggle.addEventListener('click', () => {
+          sidebar.classList.toggle('active');
+        });
+
+        sidebar.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+          });
+        });
+      }
+    });
+</script>
+</body>
+</html>
