@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Articles</title>
+    <link rel="stylesheet" href="CSS/Articles.css">
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+<div id="TopBar"></div>
+<div id="SideBar"></div>
+
+<section class="main-content">
+  <div class="main-container">
+    <h3>Articles</h3>
+    <hr>
+  </div>
+</section>
+
+
+
+
+<section class="bottom-content">
+  <div class="content-row">
+    <div class="content-box">
+      <h3>Top Artists</h3>
+      <hr> 
+      <ul>
+        <li>Kishore Kumar</li>
+        <li>Kumar Sanu</li>
+        <li>Rahat Fateh Ali Khan</li>
+        <li>Anirudh Ravichander</li>
+        <li>Shankar Mahadevan</li>
+        <li>Hariharan</li>
+      </ul>
+      </div>
+    <div class="content-row">
+      <div class="content-box">
+      <h3>Music</h3>
+      <hr> 
+      <ul>
+       <li>Bhajan</li>
+       <li>Aarti</li>
+       <li>Dhoon</li>
+        <li>Katha Sarita</li>
+        <li>Amrutvani</li>
+        <li>Meditation</li>
+     </ul>
+    </div>
+    </div>
+    <div class="content-row">
+      <div class="content-box">
+      <h3>Top Author</h3>
+      <hr> 
+      <ul>
+        <li>Kishore Kumar</li>
+        <li>Kumar Sanu</li>
+       <li>Rahat Fateh Ali Khan</li>
+       <li>Anirudh Ravichander</li>
+       <li>Shankar Mahadevan</li>
+       <li>Hariharan</li>
+      </ul>
+      </div>
+    </div>
+    <div class="content-row">
+      <div class="content-box">
+      <h3>Podcasts</h3>
+      <hr> 
+      <ul>
+        <li>Amrutvani</li>
+        <li>Kathasarita</li>
+        <li>Sabha Shrot</li>
+        <li>Savand</li>
+        <li>Morning Words</li>
+        <li>Mantra</li>
+      </ul>
+      </div>
+    </div>
+    <div class="content-box"> 
+      <h3>Follow Us</h3>
+      <hr> 
+      <div class="social-icons">
+      <a href="#"><img src="Images/facebook.png" alt="Facebook">@username</a>
+      <a href="#"><img src="Images/x.png" alt="x">@username</a>
+      <a href="#"><img src="Images/instagram.png" alt="Instagram">@username</a>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<script>
+  fetch('layout/TopBar.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('TopBar').innerHTML = data);
+  fetch('layout/SideBar.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('SideBar').innerHTML = data);
+</script>
+<script src="JS/topBar.js"></script>
+<script src="JS/sidebar.js"></script>
+<script>
+    Promise.all([
+      fetch('layout/TopBar.html').then(res => res.text()).then(data => {
+        document.getElementById('TopBar').innerHTML = data;
+      }),
+      fetch('layout/SideBar.html').then(res => res.text()).then(data => {
+        document.getElementById('SideBar').innerHTML = data;
+      })
+    ]).then(() => {
+      const menuToggle = document.getElementById('menu-toggle');
+      const sidebar = document.getElementById('sidebar');
+
+      if (menuToggle && sidebar) {
+        menuToggle.addEventListener('click', () => {
+          sidebar.classList.toggle('active');
+        });
+
+        sidebar.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+          });
+        });
+      }
+    });
+</script>
+</body>
+</html>
+
+
+
+
