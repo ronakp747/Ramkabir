@@ -14,7 +14,7 @@ body {
   .event-box {
     flex: 0 0 calc(35% - 10px);
     max-width: calc(35% - 10px);
-    margin: 0 5px 20px; /* Add some horizontal spacing */
+    margin: 0 5px 20px; /* Add some horispacing */
     border: 1px solid #ccc;
     padding: 15px;
     box-sizing: border-box;
