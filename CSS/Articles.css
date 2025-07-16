@@ -1,0 +1,60 @@
+.article-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: inherit;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+  }
+  
+  .article-card:hover {
+    transform: translateY(-4px);
+    background-color: #fff4ef;
+  }
+  
+  .article-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .article-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .article-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ff6348;
+  }
+  
+  .article-meta {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+  }
+  
+  .read-button {
+    align-self: start;
+    padding: 8px 14px;
+    font-size: 14px;
+    border: none;
+    background-color: #ff7e4f;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .read-button:hover {
+    background-color: #ff6348;
+  }
+  
