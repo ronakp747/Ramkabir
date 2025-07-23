@@ -47,7 +47,7 @@
     padding: 8px 14px;
     font-size: 14px;
     border: none;
-    background-color: #1d79ac;
+    background-color: #19ac4f;
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -55,6 +55,6 @@
   }
   
   .read-button:hover {
-    background-color: #1d79ac;
+    background-color: #19ac4f;
   }
   
