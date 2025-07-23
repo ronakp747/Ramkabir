@@ -206,7 +206,7 @@ header {
 
 
 .sidebar ul li a:hover {
-  background-color: rgba(250, 191, 180, 0.3);
+  background-color: rgba(180, 233, 201, 0.3);
   color: #19ac4f;
 }
 
@@ -337,6 +337,6 @@ h4 {
 }
 
 .hamburger:hover {
-  background-color: rgba(250, 191, 180, 0.3);
+  background-color: #0e7d3a;
   transition: background-color 0.3s ease;
 }
