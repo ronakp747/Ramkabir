@@ -50,7 +50,7 @@ form textarea {
 
   /* Submit area for user  */
  button {
-    background-color: #ff6348;
+    background-color: #2ba6e6;
     color: #fff;
     padding: 12px 20px;
     border: none;
@@ -63,6 +63,6 @@ form textarea {
   }
   
 button:hover {
-    background-color: #e04819;
+    background-color: #1d79ac;
   }
   
