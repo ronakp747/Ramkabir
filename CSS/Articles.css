@@ -33,7 +33,7 @@
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 5px;
-    color: #1d79ac;
+    color: #19ac4f;
   }
   
   .article-meta {
@@ -55,6 +55,6 @@
   }
   
   .read-button:hover {
-    background-color: #19ac4f;
+    background-color: #0e7d3a;
   }
   
