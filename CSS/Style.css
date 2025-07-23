@@ -131,7 +131,7 @@ header {
 }
 
 .donate-button button {
-  background-color: #ff7e4f;
+  background-color: #19ac4f;
   border: none;
   padding: 13px 18px;
   font-size: 15px;
@@ -146,7 +146,7 @@ header {
 }
 
 .donate-button button:hover {
-  background-color: #ff4500;
+  background-color: #0e7d3a;
   transform: translateY(-5px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -234,7 +234,7 @@ header {
   overflow-x: auto;
   gap: 20px;
   padding: 20px;
-  background-color: #ff7e4f;
+  background-color: #19ac4f;
   min-height: 250px;
 }
 
@@ -319,7 +319,7 @@ h4 {
   justify-content: center;
   width: 50px;
   height: 50px;
-  background-color: #ff7e4f;
+  background-color: #19ac4f;
   border: none;
   cursor: pointer;
   gap: 6px;
