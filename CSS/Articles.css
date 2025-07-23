@@ -14,7 +14,7 @@
   
   .article-card:hover {
     transform: translateY(-4px);
-    background-color: #fff4ef;
+    background-color: rgba(180, 233, 201, 0.3);
   }
   
   .article-card img {
