@@ -131,7 +131,7 @@ header {
 }
 
 .donate-button button {
-  background-color: #2ba6e6;
+  background-color: #4f5eaf;
   border: none;
   padding: 13px 18px;
   font-size: 15px;
@@ -301,8 +301,8 @@ header {
 h3 {
   text-align: left;
   margin-bottom: 10px;
-  color: #1d79ac;
-  font-size: 25px;
+  color: #4f5eaf;
+  font-size: 35px;
   max-width: 280px;
 }
 
