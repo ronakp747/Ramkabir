@@ -112,7 +112,7 @@ header {
 }
 
 .nav-menu a:hover {
-  color: #1d79ac;
+  color: #4f5eaf;
 }
 
 .nav-menu a:hover::before,
@@ -123,7 +123,7 @@ header {
   left: 0;
   width: 100%;
   height: 5px;
-  background-color: #1d79ac;
+  background-color: #4f5eaf;
 }
 
 .donate-button {
@@ -206,8 +206,8 @@ header {
 
 
 .sidebar ul li a:hover {
-  background-color: rgba(180, 233, 201, 0.3);
-  color: #19ac4f;
+  background-color: rgba(191, 197, 226, 0.3);
+  color: #4f5eaf;
 }
 
 
@@ -337,6 +337,6 @@ h4 {
 }
 
 .hamburger:hover {
-  background-color: #1d79ac;
+  background-color: #c99925;
   transition: background-color 0.3s ease;
 }
