@@ -139,7 +139,6 @@ header {
   cursor: pointer;
   border-radius: 50px;
   transition: all 0.3s ease;
-  min-width: 100px; 
 }
 
 .donate-button button a {
