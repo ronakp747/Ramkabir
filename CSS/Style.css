@@ -319,7 +319,7 @@ h4 {
   justify-content: center;
   width: 50px;
   height: 50px;
-  background-color: #f4c430;
+  background-color: #4f5eaf;
   border: none;
   cursor: pointer;
   gap: 6px;
@@ -337,6 +337,6 @@ h4 {
 }
 
 .hamburger:hover {
-  background-color: #c99925;
+  background-color: #1d79ac;
   transition: background-color 0.3s ease;
 }
