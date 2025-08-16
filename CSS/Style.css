@@ -70,6 +70,11 @@ header {
   white-space: nowrap; /* keep it on one line */
 }
 
+.extra-photo img {
+  height: 50px;       /* adjust size */
+  width: auto;
+  margin-right: 20px; /* space before Home button */
+}
 
 .nav-menu {
   display: flex;
