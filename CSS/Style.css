@@ -77,7 +77,11 @@ header {
   display: flex;
   gap: 0px;
 }
-
+.extra-photo img {
+  height: 50px;   /* adjust size */
+  width: auto;
+  margin-right: 15px; /* space before Home button */
+}
 .left-side {
   display: flex;
   align-items: center;
@@ -229,11 +233,6 @@ header {
   background-color: white;
   border-top: 1px solid #ddd;
   flex: 1;
-  background-image: url("Images/logo2.png"); /* your logo path */
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 300px auto;  /* adjust size */
-  opacity: 1; /* keep content fully visible */
 }
 
 .bottom-content {
