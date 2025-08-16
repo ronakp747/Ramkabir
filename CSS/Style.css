@@ -142,7 +142,7 @@ header {
 }
 
 .donate-button button a {
-  color: #f4c430;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -304,7 +304,7 @@ h3 {
   margin-bottom: 10px;
   color: #4f5eaf;
   font-size: 35px;
-  max-width: 280px;
+  max-width: 500px;
 }
 
 h4 {
