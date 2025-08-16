@@ -1,0 +1,129 @@
+/* Page container (lines up with your main layout) */
+.history-container {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 30px 0 10px; /* top space under header */
+  }
+  
+  /* Section titles (match site palette) */
+  .section-title {
+    color: #4f5eaf;
+    font-size: 26px;
+    margin: 28px 0 14px;
+  }
+  
+  /* Intro text */
+  .history-intro p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #222;
+    margin-bottom: 12px;
+  }
+  
+  /* Timeline */
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 18px;              /* room for the left line */
+    position: relative;
+    border-left: 4px solid #f4c430;   /* vertical accent */
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin: 0 0 16px 0;
+    padding-left: 18px;               /* aligns with dot */
+  }
+  
+  .timeline-dot {
+    width: 14px;
+    height: 14px;
+    background: #f4c430;
+    border-radius: 50%;
+    position: absolute;
+    left: -11px;  /* centers on the border line */
+    top: 6px;
+  }
+  
+  .timeline-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 12px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  
+  .timeline-card h4 {
+    margin: 0 0 6px 0;
+    color: #4f5eaf;
+    font-size: 18px;
+  }
+  
+  .timeline-card p {
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+    font-size: 15px;
+  }
+  
+  /* Events list */
+  .history-events {
+    margin-top: 34px;
+  }
+  
+  .events-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 8px 0;
+  }
+  
+  .events-list li {
+    background: #f9f9f9;
+    border-left: 6px solid #f4c430;
+    border-radius: 10px;
+    padding: 10px 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .events-list li span {
+    color: #4f5eaf;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  
+  .events-note {
+    margin-top: 8px;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Future callout */
+  .history-future {
+    margin-top: 36px;
+  }
+  
+  .callout {
+    border: 2px dashed #f4c430;
+    border-radius: 12px;
+    padding: 14px 16px;
+    background: #fffdf0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  
+  .callout strong {
+    display: block;
+    color: #4f5eaf;
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  
+  /* Small screens */
+  @media (max-width: 560px) {
+    .timeline { border-left-width: 3px; }
+    .timeline-dot { width: 12px; height: 12px; left: -10px; }
+    .timeline-card h4 { font-size: 17px; }
+    .timeline-card p { font-size: 14px; }
+  }
+  
