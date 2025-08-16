@@ -1,193 +1,236 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Our Team</title>
-    <link rel="stylesheet" href="CSS/OurTeam.css">
-    <link rel="stylesheet" href="CSS/Style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Our Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Page-specific CSS (keep Style.css as-is) -->
+  <link rel="stylesheet" href="CSS/OurTeam.css" />
+  <link rel="stylesheet" href="CSS/Style.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 <body>
-  
-<div id="TopBar"></div>
-<div id="SideBar"></div>
 
-<section class="main-content">
-  <div class="main-container">
-    <h3>Our Team</h3>
-    <hr>
-  </div>
+  <!-- Layout includes -->
+  <div id="TopBar"></div>
+  <div id="SideBar"></div>
 
-  <!-- Leadership Section -->
-  <section class="leadership">
-    <h2>Leadership</h2>
-    <div class="team-grid">
-      <div class="team-card">
-        <img src="Images/Members/KamleshPatel.JPG" alt="President">
-        <p class="position">President</p>
-        <p class="name">Kamlesh Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/ChiragDalia.JPG" alt="Vice President">
-        <p class="position">Vice President</p>
-        <p class="name">Chirag Dalla</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/ManishBhagat.JPG" alt="Secretary">
-        <p class="position">Secretary</p>
-        <p class="name">Manish Bhagat</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/AravindPatel.JPG" alt="Joint Secretary">
-        <p class="position">Joint Secretary</p>
-        <p class="name">Arvind Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/DevPatel.JPG" alt="Treasurer">
-        <p class="position">Treasurer</p>
-        <p class="name">Dev Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/HiteshBhagat.JPG" alt="Joint Treasurer">
-        <p class="position">Joint Treasurer</p>
-        <p class="name">Hitesh Bhagat</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/JainishabenPatel.png" alt="Board of Chair">
-        <p class="position">Board Chair</p>
-        <p class="name">Jainishaben Patel</p>
-      </div>
+  <!-- Main -->
+  <section class="main-content" aria-labelledby="page-title">
+    <div class="ourteam-container">
+      <h3 id="page-title">Our Team</h3>
+      <hr />
+
+      <!-- Leadership -->
+      <section class="team-section" aria-labelledby="leadership-title">
+        <h2 id="leadership-title" class="team-section__title">Leadership</h2>
+        <div class="team-grid" role="list">
+          <!-- 1 -->
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/KamleshPatel.JPG" alt="Kamlesh Patel" loading="lazy" />
+            <p class="team-card__name">Kamlesh Patel</p>
+            <p class="team-card__role">President</p>
+          </article>
+          <!-- 2 -->
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/ChiragDalia.JPG" alt="Chirag Dalia" loading="lazy" />
+            <p class="team-card__name">Chirag Dalia</p>
+            <p class="team-card__role">Vice President</p>
+          </article>
+          <!-- 3 -->
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/ManishBhagat.JPG" alt="Manish Bhagat" loading="lazy" />
+            <p class="team-card__name">Manish Bhagat</p>
+            <p class="team-card__role">Secretary</p>
+          </article>
+          <!-- 4 -->
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/AravindPatel.JPG" alt="Arvind Patel" loading="lazy" />
+            <p class="team-card__name">Arvind Patel</p>
+            <p class="team-card__role">Joint Secretary</p>
+          </article>
+          <!-- 5 -->
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/DevPatel.JPG" alt="Dev Patel" loading="lazy" />
+            <p class="team-card__name">Dev Patel</p>
+            <p class="team-card__role">Treasurer</p>
+          </article>
+          <!-- 6 -->
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/HiteshBhagat.JPG" alt="Hitesh Bhagat" loading="lazy" />
+            <p class="team-card__name">Hitesh Bhagat</p>
+            <p class="team-card__role">Joint Treasurer</p>
+          </article>
+          <!-- 7 -->
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/JainishabenPatel.png" alt="Jainishaben Patel" loading="lazy" />
+            <p class="team-card__name">Jainishaben Patel</p>
+            <p class="team-card__role">Board Chair</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Board Members -->
+      <section class="team-section" aria-labelledby="board-title">
+        <h2 id="board-title" class="team-section__title">Board Members</h2>
+        <div class="team-grid" role="list">
+          <!-- Add/adjust as needed; 22 examples below -->
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/NimeshPatel.JPG" alt="Nimesh Patel" loading="lazy" />
+            <p class="team-card__name">Nimesh Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/NiranjanPatel.JPG" alt="Niranjan Patel" loading="lazy" />
+            <p class="team-card__name">Niranjan Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/PadamPatel.JPG" alt="Padam Patel" loading="lazy" />
+            <p class="team-card__name">Padam Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/HarshilPatel.JPG" alt="Harshil Patel" loading="lazy" />
+            <p class="team-card__name">Harshil Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/JayeshPatel.JPG" alt="Jayesh Patel" loading="lazy" />
+            <p class="team-card__name">Jayesh Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/RinkeshBhagat.JPG" alt="Rinkesh Bhagat" loading="lazy" />
+            <p class="team-card__name">Rinkesh Bhagat</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/RupeshBhagat.JPG" alt="Rupesh Bhagat" loading="lazy" />
+            <p class="team-card__name">Rupesh Bhagat</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/SandipPatel.JPG" alt="Sandip Patel" loading="lazy" />
+            <p class="team-card__name">Sandip Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/AvinashPatel.JPG" alt="Avinash Patel" loading="lazy" />
+            <p class="team-card__name">Avinash Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/HardikPatel.JPG" alt="Hardik Patel" loading="lazy" />
+            <p class="team-card__name">Hardik Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/PiyushPatel.JPG" alt="Piyush Patel" loading="lazy" />
+            <p class="team-card__name">Piyush Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/PradipPatel.JPG" alt="Pradip Patel" loading="lazy" />
+            <p class="team-card__name">Pradip Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/AbhishekAmin.JPG" alt="Abhishek Amin" loading="lazy" />
+            <p class="team-card__name">Abhishek Amin</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/VashantPatel.JPG" alt="Vashant Patel" loading="lazy" />
+            <p class="team-card__name">Vashant Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/RakeshPatel.JPG" alt="Rakesh Patel" loading="lazy" />
+            <p class="team-card__name">Rakesh Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/MiteshPatel.JPG" alt="Mitesh Patel" loading="lazy" />
+            <p class="team-card__name">Mitesh Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/NikibenPatel.JPG" alt="Nikiben Patel" loading="lazy" />
+            <p class="team-card__name">Nikiben Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/AlpeshPatel.JPG" alt="Alpesh Patel" loading="lazy" />
+            <p class="team-card__name">Alpesh Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/DharmeshPatel.JPG" alt="Dharmesh Patel" loading="lazy" />
+            <p class="team-card__name">Dharmesh Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/NavinPatel.JPG" alt="Navin Patel" loading="lazy" />
+            <p class="team-card__name">Navin Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/HiteshPatel.JPG" alt="Hitesh Patel" loading="lazy" />
+            <p class="team-card__name">Hitesh Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img src="Images/Members/YogeshPatel.JPG" alt="Yogesh Patel" loading="lazy" />
+            <p class="team-card__name">Yogesh Patel</p>
+            <p class="team-card__role">Board Member</p>
+          </article>
+        </div>
+      </section>
     </div>
   </section>
 
-  <!-- Board Members Section -->
-  <section class="board-members">
-    <h2>Board Members</h2>
-    <div class="team-grid">
-      <!-- Example board member -->
-      <div class="team-card">
-        <img src="Images/Members/NimeshPatel.JPG" alt="Member 1">
-        <p class="position">Board Member</p>
-        <p class="name">Nimesh Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/NiranjanPatel.JPG" alt="Member 2">
-        <p class="position">Board Member</p>
-        <p class="name">Niranjan Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/PadamPatel.JPG" alt="Member 1">
-        <p class="position">Board Member</p>
-        <p class="name">Padam Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/HarshilPatel.JPG" alt="Member 2">
-        <p class="position">Board Member</p>
-        <p class="name">Harshil Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/JayeshPatel.JPG" alt="Member 1">
-        <p class="position">Board Member</p>
-        <p class="name">Jayesh Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/RinkeshBhagat.JPG" alt="Member 2">
-        <p class="position">Board Member</p>
-        <p class="name">Rinkesh Bhagat</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/RupeshBhagat.JPG" alt="Member 1">
-        <p class="position">Board Member</p>
-        <p class="name">Rupesh Bhagat</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/SandipPatel.JPG" alt="Member 2">
-        <p class="position">Board Member</p>
-        <p class="name">Sandip Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/AvinashPatel.JPG" alt="Member 1">
-        <p class="position">Board Member</p>
-        <p class="name">Avinash Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/HardikPatel.JPG" alt="Member 2">
-        <p class="position">Board Member</p>
-        <p class="name">Hardik Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/PiyushPatel.JPG" alt="Member 1">
-        <p class="position">Board Member</p>
-        <p class="name">Piyush Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/PradipPatel.JPG" alt="Member 2">
-        <p class="position">Board Member</p>
-        <p class="name">Pradip Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/AbhishekAmin.JPG" alt="Member 1">
-        <p class="position">Board Member</p>
-        <p class="name">Abhishek Amin</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/VashantPatel.JPG" alt="Member 2">
-        <p class="position">Board Member</p>
-        <p class="name">Vashant Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/RakeshPatel.JPG" alt="Member 1">
-        <p class="position">Board Member</p>
-        <p class="name">Rakesh Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/MiteshPatel.JPG" alt="Member 2">
-        <p class="position">Board Member</p>
-        <p class="name">Mitesh Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/NikibenPatel.JPG" alt="Member 1">
-        <p class="position">Board Member</p>
-        <p class="name">Nikiben Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/AlpeshPatel.JPG" alt="Member 2">
-        <p class="position">Board Member</p>
-        <p class="name">Alpesh Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/DharmeshPatel.JPG alt="Member 1">
-        <p class="position">Board Member</p>
-        <p class="name">Dharmesh Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/NavinPatel.JPG" alt="Member 2">
-        <p class="position">Board Member</p>
-        <p class="name">Navin Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/HiteshPatel.JPG" alt="Member 1">
-        <p class="position">Board Member</p>
-        <p class="name">Hitesh Patel</p>
-      </div>
-      <div class="team-card">
-        <img src="Images/Members/YogeshPatel.JPG" alt="Member 2">
-        <p class="position">Board Member</p>
-        <p class="name">Yogesh Patel</p>
-      </div>
-    </div>
-  </section>
-</section>
+  <!-- Scripts -->
+  <script>
+    Promise.all([
+      fetch('layout/TopBar.html').then(r => r.text()),
+      fetch('layout/SideBar.html').then(r => r.text())
+    ]).then(([top, side]) => {
+      document.getElementById('TopBar').innerHTML = top;
+      document.getElementById('SideBar').innerHTML = side;
 
-<script>
-  fetch('layout/TopBar.html')
-    .then(response => response.text())
-    .then(data => document.getElementById('TopBar').innerHTML = data);
-  fetch('layout/SideBar.html')
-    .then(response => response.text())
-    .then(data => document.getElementById('SideBar').innerHTML = data);
-</script>
-<script src="JS/topBar.js"></script>
-<script src="JS/sidebar.js"></script>
+      const toggle = document.getElementById('menu-toggle');
+      const sidebar = document.getElementById('sidebar');
+      if (toggle && sidebar) {
+        toggle.addEventListener('click', () => sidebar.classList.toggle('active'));
+        sidebar.querySelectorAll('a').forEach(a =>
+          a.addEventListener('click', () => sidebar.classList.remove('active'))
+        );
+      }
+    });
+  </script>
+  <script src="JS/topBar.js"></script>
+  <script src="JS/sidebar.js"></script>
 </body>
 </html>
