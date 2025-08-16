@@ -3,7 +3,7 @@ const FALLBACK_SECONDS = 5;
 const CROSSFADE_MS = 900;     
 
 const SLIDESHOW_IMAGES = [
-    "ss1.jpg",
+    "ss1.png",
     "ss2.jpg",
     "ss3.jpg",
     "ss4.jpg",
