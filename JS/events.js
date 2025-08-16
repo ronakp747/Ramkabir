@@ -86,7 +86,7 @@ fetch(sheetCSVUrl)
         currentRow = '';
       }
     });
-//test
+
     if (currentRow.trim() !== '') {
       html += `<div class="events-row">${currentRow}</div>`;
     }
