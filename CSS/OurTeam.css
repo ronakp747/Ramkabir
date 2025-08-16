@@ -2,28 +2,54 @@
    Our Team Page (page-specific)
    ================================ */
 
-/* Container aligned with your Style.css main-content */
+/* Container aligned with your global main-content */
 .ourteam-container {
   width: min(1200px, 92%);
   margin: 0 auto;
   padding: 20px 0 10px;
 }
 
-/* Section headers */
+/* Section base */
+.team-section {
+  text-align: center; /* center section titles and general content */
+}
+
 .team-section__title {
   color: #4f5eaf;
   font-size: 26px;
   margin: 18px 0 14px;
+  text-align: center;
 }
 
-/* Responsive grid for cards */
-.team-grid {
+/* ===== Leadership ===== */
+
+/* Two explicit centered rows for leadership */
+.leadership .leadership-row {
+  display: flex;
+  justify-content: center; /* center the row */
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-bottom: 26px;
+}
+
+/* Consistent card width so rows align nicely */
+.leadership .team-card {
+  flex: 0 1 230px; /* ~230px card width */
+}
+
+/* ===== Board Members ===== */
+
+/* Responsive centered grid */
+.board-members .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 22px;
+  justify-items: center; /* center cards within their grid cells */
 }
 
-/* Card */
+/* ===== Card ===== */
+
 .team-card {
   display: flex;
   flex-direction: column;
@@ -72,7 +98,8 @@
 }
 
 /* Small screens: tighten spacing */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+  .leadership .team-card { flex: 1 1 100%; } /* stack leadership on small screens */
   .team-card {
     padding: 16px 14px;
   }
@@ -88,9 +115,8 @@
   }
 }
 
-/* Optional: micro-clearfix for broken images */
-.team-card img:not([src]), 
-.team-card img[src=""],
-.team-card img[onerror] {
+/* Optional: fallback background if an img is missing/broken */
+.team-card img:not([src]),
+.team-card img[src=""] {
   background: #eee;
 }
