@@ -14,7 +14,7 @@
   
   .article-card:hover {
     transform: translateY(-4px);
-    background-color: rgba(180, 233, 201, 0.3);
+    background-color: rgba(191, 197, 226, 0.3);
   }
   
   .article-card img {
@@ -33,7 +33,7 @@
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 5px;
-    color: #19ac4f;
+    color: #4f5eaf;
   }
   
   .article-meta {
@@ -47,7 +47,7 @@
     padding: 8px 14px;
     font-size: 14px;
     border: none;
-    background-color: #19ac4f;
+    background-color: #4f5eaf;
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -55,6 +55,6 @@
   }
   
   .read-button:hover {
-    background-color: #0e7d3a;
+    background-color: #1d79ac;;
   }
   
