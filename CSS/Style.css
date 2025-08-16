@@ -64,9 +64,9 @@ header {
 }
 
 .logo-text {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
-  color: #000;   /* black text */
+  color: #4f5eaf;   /* black text */
   white-space: nowrap; /* keep it on one line */
 }
 
@@ -90,10 +90,7 @@ header {
   padding-left: 40px;
 }
 
-.spacer {
-  flex-grow: 1;
-  margin-left: 250px;
-}
+
 
 .nav-menu ul {
   list-style-type: none;
@@ -105,7 +102,9 @@ header {
   text-decoration: none;
   font-size: 16px;
   background-color: #f3f3f3;
-  padding: 25px 25px;
+  padding: 25px 30px;
+  min-width: 130px;
+  white-space: nowrap;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,11 +134,12 @@ header {
 .donate-button button {
   background-color: #4f5eaf;
   border: none;
-  padding: 13px 18px;
+  padding: 13px 25px;
   font-size: 15px;
   cursor: pointer;
   border-radius: 50px;
   transition: all 0.3s ease;
+  min-width: 100px; 
 }
 
 .donate-button button a {
