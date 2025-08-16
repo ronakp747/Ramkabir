@@ -234,7 +234,7 @@ header {
   overflow-x: auto;
   gap: 20px;
   padding: 20px;
-  background-color: #19ac4f;
+  background-color: #f4c430;
   min-height: 250px;
 }
 
@@ -301,7 +301,7 @@ header {
 h3 {
   text-align: left;
   margin-bottom: 10px;
-  color: #19ac4f;
+  color: #1d79ac;
   font-size: 25px;
   max-width: 280px;
 }
@@ -319,7 +319,7 @@ h4 {
   justify-content: center;
   width: 50px;
   height: 50px;
-  background-color: #19ac4f;
+  background-color: #f4c430;
   border: none;
   cursor: pointer;
   gap: 6px;
@@ -337,6 +337,6 @@ h4 {
 }
 
 .hamburger:hover {
-  background-color: #0e7d3a;
+  background-color: #1d79ac;
   transition: background-color 0.3s ease;
 }
