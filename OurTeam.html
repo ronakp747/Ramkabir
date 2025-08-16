@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Our Team</title>
+    <link rel="stylesheet" href="CSS/OurTeam.css">
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  
+<div id="TopBar"></div>
+<div id="SideBar"></div>
+
+<section class="main-content">
+  <div class="main-container">
+    <h3>Our Team</h3>
+    <hr>
+  </div>
+
+  <!-- Leadership Section -->
+  <section class="leadership">
+    <h2>Leadership</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="Images/members/president.jpg" alt="President">
+        <p class="position">President</p>
+        <p class="name">John Doe</p>
+      </div>
+      <div class="team-card">
+        <img src="Images/members/vp.jpg" alt="Vice President">
+        <p class="position">Vice President</p>
+        <p class="name">Jane Smith</p>
+      </div>
+      <div class="team-card">
+        <img src="Images/members/secretary.jpg" alt="Secretary">
+        <p class="position">Secretary</p>
+        <p class="name">Raj Patel</p>
+      </div>
+      <div class="team-card">
+        <img src="Images/members/joint-secretary.jpg" alt="Joint Secretary">
+        <p class="position">Joint Secretary</p>
+        <p class="name">Priya Kumar</p>
+      </div>
+      <div class="team-card">
+        <img src="Images/members/treasurer.jpg" alt="Treasurer">
+        <p class="position">Treasurer</p>
+        <p class="name">Michael Lee</p>
+      </div>
+      <div class="team-card">
+        <img src="Images/members/joint-treasurer.jpg" alt="Joint Treasurer">
+        <p class="position">Joint Treasurer</p>
+        <p class="name">Asha Mehta</p>
+      </div>
+      <div class="team-card">
+        <img src="Images/members/chair.jpg" alt="Board Chair">
+        <p class="position">Board Chair</p>
+        <p class="name">David Johnson</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Board Members Section -->
+  <section class="board-members">
+    <h2>Board Members</h2>
+    <div class="team-grid">
+      <!-- Example board member -->
+      <div class="team-card">
+        <img src="Images/members/member1.jpg" alt="Member 1">
+        <p class="position">Board Member</p>
+        <p class="name">Anita Sharma</p>
+      </div>
+      <div class="team-card">
+        <img src="Images/members/member2.jpg" alt="Member 2">
+        <p class="position">Board Member</p>
+        <p class="name">Ravi Patel</p>
+      </div>
+      <!-- Repeat this card for all 22 board members -->
+    </div>
+  </section>
+</section>
+
+<script>
+  fetch('layout/TopBar.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('TopBar').innerHTML = data);
+  fetch('layout/SideBar.html')
+    .then(response => response.text())
+    .then(data => document.getElementById('SideBar').innerHTML = data);
+</script>
+<script src="JS/topBar.js"></script>
+<script src="JS/sidebar.js"></script>
+</body>
+</html>
