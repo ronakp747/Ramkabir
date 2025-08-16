@@ -9,7 +9,8 @@
     overflow: hidden;
     padding-right: 25px;
   }
-  
+  .daily-thought-text-overlay { cursor: pointer; }
+
   .thought-image {
     width: 100%;
     display: block;
