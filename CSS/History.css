@@ -58,13 +58,14 @@
   .timeline-item {
     position: relative;
     margin: 0 0 18px 0;
+    margin-left: -20px;
   }
   
   /* The dot */
   .timeline-item .dot {
     position: absolute;
-    left: 24px;                   /* same x as line center */
-    top: 18px;                    /* vertical alignment with card title line */
+    left: -2px;                   /* same x as line center */
+    top: 46px;                    /* vertical alignment with card title line */
     transform: translate(-50%, -50%);
     width: 14px;
     height: 14px;
