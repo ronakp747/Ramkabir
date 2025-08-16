@@ -1,12 +1,14 @@
 .slideshow {
     position: relative;
-    width: min(1200px, 92%);
-    aspect-ratio: 16 / 9;    
-    margin: 10px auto 20px;  
-    border-radius: 14px;
+    width: 100%;
+    max-width: 720px;
+    aspect-ratio: 16 / 9;
+    min-height: 260px;
+    margin: 20px auto 24px;
     overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    border-radius: 12px;
     background: #f3f3f3;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   }
   
   .slideshow .slide {
@@ -30,24 +32,51 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(79, 94, 175, 0.7);
-    color: #fff;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
     border: none;
-    width: 42px;
-    height: 42px;
     border-radius: 50%;
+    background: rgba(79, 94, 175, 0.78);
+    color: #fff;
     cursor: pointer;
     font-size: 20px;
-    line-height: 42px;
+    line-height: 40px;
     text-align: center;
     padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
     transition: background 0.2s ease, transform 0.2s ease;
   }
-  .slide-ctrl:hover { background: rgba(79, 94, 175, 0.9); transform: translateY(-50%) scale(1.05); }
+  
+  .slide-ctrl:hover {
+    background: rgba(79, 94, 175, 0.95);
+    transform: translateY(-50%) scale(1.05);
+  }
+  
+  .slide-ctrl:focus-visible {
+    outline: 3px solid #f4c430;
+    outline-offset: 2px;
+  }
+  
   .slide-ctrl.prev { left: 10px; }
   .slide-ctrl.next { right: 10px; }
   
+  @media (max-width: 900px) {
+    .slideshow { max-width: 640px; }
+  }
+  
+  @media (max-width: 700px) {
+    .slideshow { max-width: 560px; }
+    .slide-ctrl { width: 36px; height: 36px; line-height: 36px; font-size: 18px; }
+  }
+  
   @media (max-width: 560px) {
-    .slide-ctrl { width: 36px; height: 36px; font-size: 18px; line-height: 36px; }
+    .slideshow { max-width: 480px; border-radius: 10px; }
+    .slide-ctrl { width: 34px; height: 34px; line-height: 34px; font-size: 17px; }
+  }
+  
+  @media (max-width: 480px) {
+    .slideshow { max-width: 94%; min-height: 200px; }
+    .slide-ctrl { width: 32px; height: 32px; line-height: 32px; font-size: 16px; }
   }
   
