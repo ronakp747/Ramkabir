@@ -10,10 +10,7 @@ const dailyQuotes = [
   { quote: "मन चंगा तो कठौती में गंगा।", author: "गुरु रविदास", translation: "If the mind is pure, the Ganga flows even in a small bowl.", authorEn: "Guru Ravidas" },
   { quote: "जाति पाति पूछै नहिं कोई, हरि को भजै सो हरि का होई।", author: "गुरु रविदास", translation: "Caste and rank don’t matter; one who loves the Lord belongs to the Lord.", authorEn: "Guru Ravidas" },
 
-  // Narsinh Mehta (Gujarati)
-  { quote: "વૈષ્ણવ જન તો તેને કહીએ, જે પીડ પરાઈ જાણે રે.", author: "નરસિંહ મહેતા", translation: "A true devotee is one who understands the pain of others.", authorEn: "Narsinh Mehta" },
-  { quote: "જેને માનસે વાણી ને ક્રીયા, તનમન રહેછે નિરમોહ.", author: "નરસિંહ મહેતા", translation: "Steady is the one whose mind, speech and actions are free of attachment.", authorEn: "Narsinh Mehta" },
-
+  
   // Meera Bai
   { quote: "मेरे तो गिरधर गोपाल, दूसरो न कोई।", author: "मीरा", translation: "For me there is only Giridhar Gopal; none other.", authorEn: "Meera Bai" },
   { quote: "मीरा के प्रभु गिरिधर नागर, सरल सुभाव सदा सहायक।", author: "मीरा", translation: "Meera’s Lord, Giridhar, is simple and ever supportive.", authorEn: "Meera Bai" },
@@ -23,7 +20,6 @@ const dailyQuotes = [
   { quote: "धैर्य, धर्म, मित्र, अरु नारी—आपद काल परखिए चारी।", author: "तुलसीदास", translation: "In adversity, test your patience, faith, friends, and family.", authorEn: "Tulsidas" },
 
   // Mahatma Gandhi
-  { quote: "The best way to find yourself is to lose yourself in the service of others.", author: "Mahatma Gandhi", translation: "The best way to find yourself is to lose yourself in the service of others.", authorEn: "Mahatma Gandhi" },
   { quote: "वह बदलाव बनिए जो आप दुनिया में देखना चाहते हैं।", author: "महात्मा गांधी", translation: "Be the change you wish to see in the world.", authorEn: "Mahatma Gandhi" },
 
   // Surdas
@@ -35,10 +31,7 @@ const dailyQuotes = [
   { quote: "राम नाम रस पीजै, मन में बसे सुजान।", author: "भक्ति परंपरा", translation: "Drink the nectar of the Divine Name; let wisdom dwell in your heart.", authorEn: "Bhakti Tradition" },
   { quote: "करुणा का दीप जलाओ, सेवा से जग उजियारा।", author: "समाज वचन", translation: "Light the lamp of compassion; let service brighten the world.", authorEn: "Community Saying" },
   { quote: "सद्भाव और सत्य—समाज की दो आँखें।", author: "समाज वचन", translation: "Goodwill and truth are the two eyes of a community.", authorEn: "Community Saying" },
-  { quote: "Serve, smile, and uplift.", author: "Community Saying", translation: "Serve, smile, and uplift.", authorEn: "Community Saying" },
-  { quote: "Unity in devotion, strength in service.", author: "Community Saying", translation: "Unity in devotion, strength in service.", authorEn: "Community Saying" },
-  { quote: "Traditions live when we share them with love.", author: "Community Saying", translation: "Traditions live when we share them with love.", authorEn: "Community Saying" }
-];
+  ];
 
 function updateDailyThought() {
   // your existing day-index logic
